@@ -1,5 +1,5 @@
-SWAY CONFIGURATION PROJECT
-==========================
+SWAY/ARCH LINUX CONFIGURATION PROJECT
+=====================================
 
 Current known issues
 --------------------
