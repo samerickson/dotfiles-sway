@@ -1,5 +1,9 @@
 SWAY CONFIGURATION PROJECT
 ==========================
+This is the master branch, which containes basic features that I think all users
+will enjoy. This branch is to serve as a defualt, no work needed version of these
+dotfiles. Take a look at other branches to see various versions for specific use
+cases.
 
 Current known issues
 --------------------
