@@ -1,0 +1,187 @@
+# ~/.config/sway/config
+
+# Variables
+# =========
+set $mod Mod4
+set $term termite
+set $browser qutebrowser
+
+set $menu "rofi -show run"
+
+# Change the keyboard settings for when my external keyboard is connected
+input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
+	xkb_options caps:escape
+	repeat_delay 250
+	repeat_rate 25
+}
+input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
+	xkb_options caps:escape
+    repeat_delay 250
+    repeat_rate 25
+}
+
+for_window [class="^.*"] border pixel 2
+for_window [app_id="^.*"] border pixel 2
+
+# Set wallpaper
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+# Set pixel density scaling
+output eDP-1 scale 2 
+
+# KEYBINDINGS
+# ===========
+    # start a terminal
+    bindsym $mod+Return exec $term
+	
+	# Start web browser
+	bindsym $mod+w 			exec $browser
+	bindsym $mod+f 			exec firefox
+
+    # kill focused window
+    bindsym $mod+Shift+q 	kill
+
+    # start your launcher
+    bindsym $mod+d 			exec $menu
+	bindsym $mod+space 		exec $menu
+
+    floating_modifier $mod normal
+
+	# Open network manager / current manager does not work with enterprise wifi
+	bindsym $mod+shift+w	exec $term -e nmtui
+
+    # reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
+    # or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # _move_ the focused window with the same, but add Shift
+    bindsym $mod+Shift+h move left
+    bindsym $mod+Shift+j move down
+    bindsym $mod+Shift+k move up
+    bindsym $mod+Shift+l move right
+    # ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+# Workspaces:
+# ===========
+    # switch to workspace
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace 2
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
+    bindsym $mod+6 workspace 6
+    bindsym $mod+7 workspace 7
+    bindsym $mod+8 workspace 8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+0 workspace 10
+    
+	# move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9
+    bindsym $mod+Shift+0 move container to workspace 10
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+t layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+shift+f fullscreen
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+Shift+space mode_toggle
+	
+    # Toggle the current focus between tiling and floating mode
+    #bindsym $mod+space focus floating toggle
+
+    # move focus to the parent container
+    bindsym $mod+a focus parent
+
+# Scratchpad:
+# ===========
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+	
+	# View windows in scratchpad
+    bindsym $mod+minus scratchpad show
+
+mode "resize" {
+    bindsym h resize shrink width 10px
+    bindsym j resize grow height 10px
+    bindsym k resize shrink height 10px
+    bindsym l resize grow width 10px
+
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bar {
+    position bottom
+    status_command i3blocks
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+# --- Multi-media keys --- #
+#bindsym XF86AudioMute
+#bindsym XF86AudioLowerVolume
+#bindsym Shift+XF86AudioLowerVolume	
+#bindsym Control+XF86AudioLowerVolume
+#bindsym XF86AudioRaiseVolume	
+#bindsym Shift+XF86AudioRaiseVolume
+#bindsym Control+XF86AudioRaiseVolume
+#bindsym XF86PowerOff
+#bindsym XF86AudioNext
+#bindsym XF86AudioPlay
+#bindsym XF86AudioPrev
+#bindsym XF86AudioStop
+#bindsym XF86AudioRewind	
+#bindsym XF86AudioForward
+bindsym XF86MonBrightnessDown	exec --no-startup-id lux -s 50
+bindsym XF86MonBrightnessUp	exec --no-startup-id lux -a 50
+
+include /etc/sway/config.d/*

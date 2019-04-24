@@ -1,0 +1,61 @@
+#vim: ft=dosini cms=#%s
+
+[options]
+allow_bold = true
+audible_bell = false
+bold_is_bright = true
+clickable_url = true
+dynamic_title = true
+font = Monospace 12
+icon_name = termite-terminal
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 1000
+search_wrap = true
+urgent_on_bell = true
+hyperlinks = true
+cursor_blink = off
+cursor_shape = block
+scrollbar = off
+
+[colors]
+# If both of these are unset, cursor falls back to the foreground color,
+# and cursor_foreground falls back to the background color.
+#cursor = #dcdccc
+#cursor_foreground = #dcdccc
+
+foreground = 		#FFFFFF
+foreground_bold = 	#FFFFFF
+background = 		#000000
+
+# 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 63, 0.8)
+
+# If unset, will reverse foreground and background
+# highlight =
+
+# black
+color0  =	#000000
+color8  =	#000000
+# Red
+color1  =	#FF0000
+color9  =	#FF0000
+# Green
+color2  =	#00FF00
+color10 =	#00FF00
+# Yellow
+color3  =	#FFFF00
+color11 =	#FFFF00
+# Blue
+color4  =	#0000FF
+color12 =	#0000FF
+# Magenta
+color5  =	#FF00FF
+color13 =	#FF00FF
+# Cyan
+color6  =	#00FFFF
+color14 =	#00FFFF
+# White
+color7  =	#FFFFFF
+color15 =	#FFFFFF
