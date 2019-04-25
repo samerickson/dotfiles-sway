@@ -1,5 +1,8 @@
-SWAY/ARCH LINUX CONFIGURATION PROJECT
-=====================================
+DOTFILE PROJECT | MASTER BRANCH [SWAYWM]
+========================================
+This is the master branch containing my 
+[tiling window manager](https://en.wikipedia.org/wiki/Tiling_window_manager) of choice. 
+For more information: [why use a tiling window manager?](https://www.youtube.com/watch?v=Lj1IfdKY0CU).
 
 Current known issues
 --------------------
