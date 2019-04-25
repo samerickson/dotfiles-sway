@@ -26,6 +26,7 @@ From the offical repositories
 - qutebrowser: Keyboard based internet browser.
 - ttf-emojione: Used for displaying emojis.
 - ttf-symbola: Used for displaying unicode symbols.
+- ufw: Firewall
 
 From the AUR
 ------------
