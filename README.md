@@ -13,15 +13,16 @@ Current known issues
 Roadmap for this branch
 -----------------------
 **Current development plan (no particular order):**
-	- Create a useful status bar
-		- Add disk usage 
-		- Add memory usage
-		- Add download speed?
-	- Make volume keys work
-	- Make screen brightness buttons work
-	- Add tap to click
-	- Add a video player
-	- Video editor
-	- Picture editor
-	- Regular backups
-	- Branches of dotfile repository for various levels of customizations
+
+- Create a useful status bar
+	- Add disk usage 
+	- Add memory usage
+	- Add download speed?
+- Make volume keys work
+- Make screen brightness buttons work
+- Add tap to click
+- Add a video player
+- Video editor
+- Picture editor
+- Regular backups
+- Branches of dotfile repository for various levels of customizations
