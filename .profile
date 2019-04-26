@@ -1,9 +1,9 @@
 #!/bin/sh
 
-#export EDITOR=""
-#export TERMINAL="termite"
-#export BROWSER="firefox"
-#export READER=""
-#export FILE=""
+export EDITOR="nvim"
+export TERMINAL="termite"
+export BROWSER="firefox"
+export READER="evince"
+export FILE="nautilus"
 
 [ -f ~/.bashrc ] && source "$HOME/.bashrc" >/dev/null

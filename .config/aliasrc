@@ -1,0 +1,30 @@
+# vim:syntax=sh
+# File: ~/.config/aliasrc
+
+# Map vi and vim to neovim
+alias vim="nvim" vi="nvim"
+
+# Reload shell environment
+alias src="source ~/.profile"
+
+# aliases for quickly editing frequently accessed configuration files
+alias cfb="$EDITOR ~/.bashrc" \
+		cfp="$EDITOR ~/.profile" \
+		cfv="$EDITOR ~/.config/nvim/init.vim" \
+		cfs="$EDITOR ~/.config/sway/config" \
+		cfa="$EDITOR ~/.config/aliasrc"
+
+# Aliases for saving a few key presses off ls commands
+alias ls="ls --color=auto" \
+		ll="ls -l" \
+		la="ls -a" \
+		llh="ls -lh" \
+		lah="ls -lah" \
+
+# Managing dotfiles
+alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
+# Saving a few key presses off frequently uses git commands
+alias gcm="git commit -S -m" \
+		gs="git status" \
+		ga="git add"
