@@ -4,8 +4,8 @@
 # =========
 set $mod Mod4
 set $term termite
-set $browser qutebrowser
-
+set $browser firefox
+set $file nautilus
 set $menu "rofi -show run"
 
 # Change the keyboard settings for when my external keyboard is connected
@@ -36,7 +36,9 @@ output eDP-1 scale 2
 	
 	# Start web browser
 	bindsym $mod+w 			exec $browser
-	bindsym $mod+f 			exec firefox
+
+	# Start file manager
+	bindsym $mod+f			exec $file
 
     # kill focused window
     bindsym $mod+Shift+q 	kill
