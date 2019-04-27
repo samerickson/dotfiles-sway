@@ -117,11 +117,13 @@ floating_modifier $mod normal
     # Change the layout of the current workspace
     bindsym $mod+s layout stacking
     bindsym $mod+t layout tabbed
+    bindsym $mod+e toggle split
 
-	# This changes the layout back to tiling if not already in that mode
-	#	it also swaps the spawning location of new windows between
-	#	horizontal and vertical
-    bindsym $mod+e layout toggle split
+	# You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
 
     # Make the current window fullscreen
     bindsym $mod+shift+f fullscreen
@@ -174,13 +176,9 @@ bar {
 
 # Multi-media keys:
 # =================
-#bindsym XF86AudioMute
-#bindsym XF86AudioLowerVolume
-#bindsym Shift+XF86AudioLowerVolume	
-#bindsym Control+XF86AudioLowerVolume
-#bindsym XF86AudioRaiseVolume	
-#bindsym Shift+XF86AudioRaiseVolume
-#bindsym Control+XF86AudioRaiseVolume
+bindsym XF86AudioMute exec ([ "$(pulsemixer --get-mute)" == 0 ] && pulsemixer --mute) || (pulsemixer --unmute)
+bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
+bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5	
 bindsym XF86PowerOff 	exec swaynag -t warning -m 'Are you sure you want to power machine off?' -b "Yes, shutdown now" 'shutdown now'
 #bindsym XF86AudioNext
 #bindsym XF86AudioPlay
