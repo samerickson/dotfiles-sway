@@ -31,8 +31,10 @@ for_window [app_id="^.*"] border pixel 2
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 # Set pixel density scaling
-output eDP-1 scale 2 
-    
+output eDP-1 scale 2
+output eDP-1 pos 0 0 res 2880x1800
+output HDMI-A-3 pos -1920 0 res 1920x1080
+
 # This makes it so that holding down mod allows you to change the location of
 #	windows using the mouse.
 floating_modifier $mod normal
