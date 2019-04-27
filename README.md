@@ -31,7 +31,7 @@ Current software:
 - [neovim](https://github.com/neovim/neovim) - Text editor
 - [pavucontrol](https://wiki.archlinux.org/index.php/PulseAudio/Configuration) - Audio controller
 - [sway](https://github.com/swaywm/sway) - Window manager
-- [termite](https://github.com/thestinger/termite/) - Terminal emulator
+- [kitty](https://github.com/kovidgoyal/kitty) - Terminal Emulator
 
 Roadmap for this branch
 -----------------------

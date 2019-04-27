@@ -3,7 +3,7 @@
 # Variables
 # =========
 set $mod Mod4
-set $term termite
+set $term kitty
 set $browser firefox
 set $file nautilus
 set $menu "rofi -show run"
@@ -20,8 +20,12 @@ input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
     repeat_rate 25
 }
 
+# Select the border size
 for_window [class="^.*"] border pixel 2
 for_window [app_id="^.*"] border pixel 2
+
+# Add gaps between the windows [note this applies to new windows]
+# gaps inner 8
 
 # Set wallpaper
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
@@ -45,7 +49,6 @@ output eDP-1 scale 2
 
     # start your launcher
     bindsym $mod+d 			exec $menu
-	bindsym $mod+space 		exec $menu
 
     floating_modifier $mod normal
 
@@ -125,10 +128,10 @@ output eDP-1 scale 2
     bindsym $mod+shift+f fullscreen
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+Shift+space mode_toggle
+    bindsym $mod+space mode_toggle
 	
     # Toggle the current focus between tiling and floating mode
-    #bindsym $mod+space focus floating toggle
+    bindsym $mod+shift+space focus floating toggle
 
     # move focus to the parent container
     bindsym $mod+a focus parent
@@ -152,7 +155,7 @@ mode "resize" {
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    # return to default mode
+    # return to defhult mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -176,7 +179,7 @@ bar {
 #bindsym XF86AudioRaiseVolume	
 #bindsym Shift+XF86AudioRaiseVolume
 #bindsym Control+XF86AudioRaiseVolume
-#bindsym XF86PowerOff
+#bindsym XF86PowerOff 
 #bindsym XF86AudioNext
 #bindsym XF86AudioPlay
 #bindsym XF86AudioPrev
