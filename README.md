@@ -30,18 +30,21 @@ Current software:
 - [lxappearance](https://www.archlinux.org/packages/community/x86_64/lxappearance/) - Theme manager
 - [neovim](https://github.com/neovim/neovim) - Text editor
 - [pavucontrol](https://wiki.archlinux.org/index.php/PulseAudio/Configuration) - Audio controller
+- [pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer) - This is used for keybindings involving audio controls
 - [sway](https://github.com/swaywm/sway) - Window manager
 - [kitty](https://github.com/kovidgoyal/kitty) - Terminal Emulator
 
 Roadmap for this branch
 -----------------------
 **Current development plan (no particular order):**
+If you have solved one of the problems below, please create a pull request.
 
 - Create a useful status bar
 	- Add disk usage 
 	- Add memory usage
 	- Add download speed?
-- Make volume keys work
 - Add tap to click
 - Video editor
-- Regular backups
+- Screenshots
+- Screen recorder
+- Convert keymappings to pdf that can be displayed to the user when a specific keybinding is pressed.
