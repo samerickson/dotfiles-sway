@@ -22,9 +22,6 @@ export FILE="nautilus"
 
 # Some wayland settings
 export GDK_BACKEND=wayland
-export CLUTTER_BACKED=wayland
-export QT_QPA_PLATFORM=wayland-egl
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
 # load alias file
 [ -f ~/.config/aliasrc ] && . ~/.config/aliasrc
