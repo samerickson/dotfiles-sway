@@ -178,17 +178,91 @@ bar {
 
 # Multi-media keys:
 # =================
-bindsym XF86AudioMute exec ([ "$(pulsemixer --get-mute)" == 0 ] && pulsemixer --mute) || (pulsemixer --unmute)
-bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
-bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5	
-bindsym XF86PowerOff 	exec swaynag -t warning -m 'Are you sure you want to power machine off?' -b "Yes, shutdown now" 'shutdown now'
+#bindsym Print
+bindsym XF86AudioMute 		exec ([ "$(pulsemixer --get-mute)" == 0 ] && pulsemixer --mute) || (pulsemixer --unmute)
+bindsym XF86AudioLowerVolume 	exec pulsemixer --change-volume -5
+bindsym XF86AudioRaiseVolume 	exec pulsemixer --change-volume +5
+bindsym XF86PowerOff 		exec swaynag -t warning -m 'Are you sure you want to power machine off?' -b "Yes, shutdown now" 'shutdown now'
+
+
 #bindsym XF86AudioNext
 #bindsym XF86AudioPlay
 #bindsym XF86AudioPrev
 #bindsym XF86AudioStop
-#bindsym XF86AudioRewind	
+#bindsym XF86AudioRewind
 #bindsym XF86AudioForward
 bindsym XF86MonBrightnessDown	exec --no-startup-id lux -s 50
-bindsym XF86MonBrightnessUp	exec --no-startup-id lux -a 50
+bindsym XF86MonBrightnessUp		exec --no-startup-id lux -a 50
+#bindsym XF86Copy			exec
+#bindsym XF86Open			exec
+#bindsym XF86Paste			exec
+#bindsym XF86Cut			exec
+#bindsym XF86MenuKB			exec
+#bindsym XF86Calculator		exec
+#bindsym XF86Sleep			exec
+#bindsym XF86WakeUp			exec
+#bindsym XF86Explorer		exec
+#bindsym XF86Send			exec
+#bindsym XF86Xfer			exec
+#bindsym XF86WWW			exec
+#bindsym XF86DOS			exec
+#bindsym XF86ScreenSaver	exec
+#bindsym XF86RotateWindows	exec
+#bindsym XF86TaskPane		exec
+#bindsym XF86Favorites		exec
+#bindsym XF86MyComputer		exec
+#bindsym XF86Back			exec
+#bindsym XF86Forward		exec
+#bindsym XF86Eject			exec
+#bindsym XF86AudioNext		exec
+#bindsym XF86AudioPlay		exec
+#bindsym XF86AudioPrev		exec
+#bindsym XF86AudioStop		exec
+#bindsym XF86AudioRecord	exec
+#bindsym XF86AudioRewind	exec
+#bindsym XF86AudioForward	exec
+#bindsym XF86Phone			exec
+#bindsym XF86Tools			exec
+#bindsym XF86HomePage		exec
+#bindsym XF86Reload			exec
+#bindsym XF86ScrollUp		exec
+#bindsym XF86ScrollDown		exec
+#bindsym XF86New			exec
+#bindsym XF86LaunchA		exec
+#bindsym XF86LaunchB		exec
+#bindsym XF86Launch2		exec
+#bindsym XF86Launch3		exec
+#bindsym XF86Launch4		exec
+#bindsym XF86Launch5		exec
+#bindsym XF86Launch6		exec
+#bindsym XF86Launch7		exec
+#bindsym XF86Launch8		exec
+#bindsym XF86Launch9		exec
+#bindsym XF86AudioMicMute	exec
+#bindsym XF86TouchpadToggle	exec
+#bindsym XF86TouchpadOn		exec
+#bindsym XF86TouchpadOff	exec
+#bindsym XF86Suspend		exec
+#bindsym XF86Close			exec
+#bindsym XF86WebCam			exec
+#bindsym XF86Mail			exec
+#bindsym XF86Messenger		exec
+#bindsym XF86Search			exec
+#bindsym XF86Go				exec
+#bindsym XF86Finance		exec
+#bindsym XF86Game			exec
+#bindsym XF86Shop			exec
+#bindsym XF86MonBrightnessDown	exec
+#bindsym XF86MonBrightnessUp	exec
+#bindsym XF86AudioMedia		exec
+#bindsym XF86Display		exec
+#bindsym XF86KbdLightOnOff	exec
+#bindsym XF86Reply			exec
+#bindsym XF86MailForward	exec
+#bindsym XF86Save			exec
+#bindsym XF86Documents		exec
+#bindsym XF86Battery		exec
+#bindsym XF86Bluetooth		exec
+#bindsym XF86WLAN 			exec
 
 include /etc/sway/config.d/*
