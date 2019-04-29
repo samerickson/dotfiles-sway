@@ -67,7 +67,9 @@ floating_modifier $mod normal
 
     # start your launcher
     bindsym $mod+d 			exec $menu
-
+	
+	# Take screen shot
+	bindsym $mod+p 			exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
 
 	# Open network manager / current manager does not work with enterprise wifi
 	bindsym $mod+shift+w	exec nmtui
@@ -178,7 +180,7 @@ bindsym $mod+r mode "resize"
 
 # Multi-media keys:
 # =================
-#bindsym Print
+bindsym Print				exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
 bindsym XF86AudioMute 		exec ([ "$(pulsemixer --get-mute)" == 0 ] && pulsemixer --mute) || (pulsemixer --unmute)
 bindsym XF86AudioLowerVolume 	exec pulsemixer --change-volume -5
 bindsym XF86AudioRaiseVolume 	exec pulsemixer --change-volume +5
