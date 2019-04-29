@@ -1,5 +1,17 @@
 # ~/.config/sway/config
 
+# Startup Programs:
+# =================
+bar {
+	position bottom
+	status_command i3blocks
+	colors {
+		statusline #ffffff
+		background #323232
+		inactive_workspace #32323200 #32323200 #5c5c5c
+	}
+}
+
 # Variables
 # =========
 set $mod Mod4
@@ -163,18 +175,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-# Status bar:
-# ===========
-bar {
-    position bottom
-    status_command i3blocks
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
 
 # Multi-media keys:
 # =================
