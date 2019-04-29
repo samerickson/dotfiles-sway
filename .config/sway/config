@@ -66,7 +66,7 @@ floating_modifier $mod normal
 
 	# Start screen recording / stop screen recording
 	bindsym $mod+z			exec ~/.bin/screencast.sh
-	bindsym $mod+shift+z	exec kill -s $(pidof wf-recorder)
+	bindsym $mod+shift+z	exec kill -2 $(pidof wf-recorder)
 
 	# kill focused window
 	bindsym $mod+Shift+q 	kill
