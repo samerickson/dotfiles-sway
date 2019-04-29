@@ -28,8 +28,8 @@ input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
 }
 input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
-    repeat_delay 250
-    repeat_rate 25
+	repeat_delay 250
+	repeat_rate 25
 }
 
 # Select the border size
@@ -53,20 +53,20 @@ floating_modifier $mod normal
 
 # KEYBINDINGS
 # ===========
-    # start a terminal
-    bindsym $mod+Return exec $term
+	# start a terminal
+	bindsym $mod+Return exec $term
 
 	# Start web browser
-	bindsym $mod+w 			exec $browser
+	bindsym $mod+w		exec $browser
 
 	# Start file manager
 	bindsym $mod+f			exec $file
 
-    # kill focused window
-    bindsym $mod+Shift+q 	kill
+	# kill focused window
+	bindsym $mod+Shift+q 	kill
 
-    # start your launcher
-    bindsym $mod+d 			exec $menu
+	# start your launcher
+	bindsym $mod+d 			exec $menu
 
 	# Take screen shot
 	bindsym --release $mod+p exec grim -o $(~/.bin/select_focused.sh)~/Pictures/$(date +%Y%m%d%h%m%s).png
@@ -74,107 +74,107 @@ floating_modifier $mod normal
 	# Open network manager / current manager does not work with enterprise wifi
 	bindsym $mod+shift+w	exec nmtui
 
-    # reload the configuration file
-    bindsym $mod+Shift+c reload
+	# reload the configuration file
+	bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
+	# exit sway (logs you out of your Wayland session)
+	bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around:
 # ==============
-    # Move your focus around
-    bindsym $mod+h focus left
-    bindsym $mod+j focus down
-    bindsym $mod+k focus up
-    bindsym $mod+l focus right
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+	# Move your focus around
+	bindsym $mod+h focus left
+	bindsym $mod+j focus down
+	bindsym $mod+k focus up
+	bindsym $mod+l focus right
+	bindsym $mod+Left focus left
+	bindsym $mod+Down focus down
+	bindsym $mod+Up focus up
+	bindsym $mod+Right focus right
 
 	# Move windows around
-    bindsym $mod+Shift+h move left
-    bindsym $mod+Shift+j move down
-    bindsym $mod+Shift+k move up
-    bindsym $mod+Shift+l move right
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+	bindsym $mod+Shift+h move left
+	bindsym $mod+Shift+j move down
+	bindsym $mod+Shift+k move up
+	bindsym $mod+Shift+l move right
+	bindsym $mod+Shift+Left move left
+	bindsym $mod+Shift+Down move down
+	bindsym $mod+Shift+Up move up
+	bindsym $mod+Shift+Right move right
 
 # Workspaces:
 # ===========
-    # Switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
+	# Switch to workspace
+	bindsym $mod+1 workspace 1
+	bindsym $mod+2 workspace 2
+	bindsym $mod+3 workspace 3
+	bindsym $mod+4 workspace 4
+	bindsym $mod+5 workspace 5
+	bindsym $mod+6 workspace 6
+	bindsym $mod+7 workspace 7
+	bindsym $mod+8 workspace 8
+	bindsym $mod+9 workspace 9
+	bindsym $mod+0 workspace 10
 
 	# Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
+	bindsym $mod+Shift+1 move container to workspace 1
+	bindsym $mod+Shift+2 move container to workspace 2
+	bindsym $mod+Shift+3 move container to workspace 3
+	bindsym $mod+Shift+4 move container to workspace 4
+	bindsym $mod+Shift+5 move container to workspace 5
+	bindsym $mod+Shift+6 move container to workspace 6
+	bindsym $mod+Shift+7 move container to workspace 7
+	bindsym $mod+Shift+8 move container to workspace 8
+	bindsym $mod+Shift+9 move container to workspace 9
+	bindsym $mod+Shift+0 move container to workspace 10
 
 # Layouts:
 # ========
-    # Change the layout of the current workspace
-    bindsym $mod+s layout stacking
-    bindsym $mod+t layout tabbed
-    bindsym $mod+e toggle split
+	# Change the layout of the current workspace
+	bindsym $mod+s layout stacking
+	bindsym $mod+t layout tabbed
+	bindsym $mod+e toggle split
 
 	# You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+	# $mod+b or $mod+v, for horizontal and vertical splits
+	# respectively.
+	bindsym $mod+b splith
+	bindsym $mod+v splitv
 
-    # Make the current window fullscreen
-    bindsym $mod+shift+f fullscreen
+	# Make the current window fullscreen
+	bindsym $mod+shift+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+space floating toggle
+	# Toggle the current focus between tiling and floating mode
+	bindsym $mod+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+shift+space focus mode_toggle
+	# Swap focus between the tiling area and the floating area
+	bindsym $mod+shift+space focus mode_toggle
 
-    # move focus to the parent container
-    bindsym $mod+a focus parent
+	# move focus to the parent container
+	bindsym $mod+a focus parent
 
 # Scratchpad:
 # ===========
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+	# Move the currently focused window to the scratchpad
+	bindsym $mod+Shift+minus move scratchpad
 
 	# View windows in scratchpad
-    bindsym $mod+minus scratchpad show
+	bindsym $mod+minus scratchpad show
 
 mode "resize" {
-    bindsym h resize shrink width 10px
-    bindsym j resize grow height 10px
-    bindsym k resize shrink height 10px
-    bindsym l resize grow width 10px
+	bindsym h resize shrink width 10px
+	bindsym j resize grow height 10px
+	bindsym k resize shrink height 10px
+	bindsym l resize grow width 10px
 
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+	bindsym Left resize shrink width 10px
+	bindsym Down resize grow height 10px
+	bindsym Up resize shrink height 10px
+	bindsym Right resize grow width 10px
 
-    # return to defhult mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+	# return to defhult mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -187,84 +187,84 @@ bindsym XF86AudioRaiseVolume 	exec pulsemixer --change-volume +5
 bindsym XF86PowerOff 		exec swaynag -t warning -m 'Are you sure you want to power machine off?' -b "Yes, shutdown now" 'shutdown now'
 
 
-#bindsym XF86AudioNext
-#bindsym XF86AudioPlay
-#bindsym XF86AudioPrev
-#bindsym XF86AudioStop
-#bindsym XF86AudioRewind
-#bindsym XF86AudioForward
+#bindsym XF86AudioNext			exec
+#bindsym XF86AudioPlay			exec
+#bindsym XF86AudioPrev			exec
+#bindsym XF86AudioStop			exec
+#bindsym XF86AudioRewind		exec
+#bindsym XF86AudioForward		exec
 bindsym XF86MonBrightnessDown	exec --no-startup-id lux -s 50
 bindsym XF86MonBrightnessUp		exec --no-startup-id lux -a 50
-#bindsym XF86Copy			exec
-#bindsym XF86Open			exec
-#bindsym XF86Paste			exec
-#bindsym XF86Cut			exec
-#bindsym XF86MenuKB			exec
-#bindsym XF86Calculator		exec
-#bindsym XF86Sleep			exec
-#bindsym XF86WakeUp			exec
-#bindsym XF86Explorer		exec
-#bindsym XF86Send			exec
-#bindsym XF86Xfer			exec
-#bindsym XF86WWW			exec
-#bindsym XF86DOS			exec
-#bindsym XF86ScreenSaver	exec
-#bindsym XF86RotateWindows	exec
-#bindsym XF86TaskPane		exec
-#bindsym XF86Favorites		exec
-#bindsym XF86MyComputer		exec
-#bindsym XF86Back			exec
-#bindsym XF86Forward		exec
-#bindsym XF86Eject			exec
-#bindsym XF86AudioNext		exec
-#bindsym XF86AudioPlay		exec
-#bindsym XF86AudioPrev		exec
-#bindsym XF86AudioStop		exec
-#bindsym XF86AudioRecord	exec
-#bindsym XF86AudioRewind	exec
-#bindsym XF86AudioForward	exec
-#bindsym XF86Phone			exec
-#bindsym XF86Tools			exec
-#bindsym XF86HomePage		exec
-#bindsym XF86Reload			exec
-#bindsym XF86ScrollUp		exec
-#bindsym XF86ScrollDown		exec
-#bindsym XF86New			exec
-#bindsym XF86LaunchA		exec
-#bindsym XF86LaunchB		exec
-#bindsym XF86Launch2		exec
-#bindsym XF86Launch3		exec
-#bindsym XF86Launch4		exec
-#bindsym XF86Launch5		exec
-#bindsym XF86Launch6		exec
-#bindsym XF86Launch7		exec
-#bindsym XF86Launch8		exec
-#bindsym XF86Launch9		exec
-#bindsym XF86AudioMicMute	exec
-#bindsym XF86TouchpadToggle	exec
-#bindsym XF86TouchpadOn		exec
-#bindsym XF86TouchpadOff	exec
-#bindsym XF86Suspend		exec
-#bindsym XF86Close			exec
-#bindsym XF86WebCam			exec
-#bindsym XF86Mail			exec
-#bindsym XF86Messenger		exec
-#bindsym XF86Search			exec
-#bindsym XF86Go				exec
-#bindsym XF86Finance		exec
-#bindsym XF86Game			exec
-#bindsym XF86Shop			exec
+#bindsym XF86Copy				exec
+#bindsym XF86Open				exec
+#bindsym XF86Paste				exec
+#bindsym XF86Cut				exec
+#bindsym XF86MenuKB				exec
+#bindsym XF86Calculator			exec
+#bindsym XF86Sleep				exec
+#bindsym XF86WakeUp				exec
+#bindsym XF86Explorer			exec
+#bindsym XF86Send				exec
+#bindsym XF86Xfer				exec
+#bindsym XF86WWW				exec
+#bindsym XF86DOS				exec
+#bindsym XF86ScreenSaver		exec
+#bindsym XF86RotateWindows		exec
+#bindsym XF86TaskPane			exec
+#bindsym XF86Favorites			exec
+#bindsym XF86MyComputer			exec
+#bindsym XF86Back				exec
+#bindsym XF86Forward			exec
+#bindsym XF86Eject				exec
+#bindsym XF86AudioNext			exec
+#bindsym XF86AudioPlay			exec
+#bindsym XF86AudioPrev			exec
+#bindsym XF86AudioStop			exec
+#bindsym XF86AudioRecord		exec
+#bindsym XF86AudioRewind		exec
+#bindsym XF86AudioForward		exec
+#bindsym XF86Phone				exec
+#bindsym XF86Tools				exec
+#bindsym XF86HomePage			exec
+#bindsym XF86Reload				exec
+#bindsym XF86ScrollUp			exec
+#bindsym XF86ScrollDown			exec
+#bindsym XF86New				exec
+#bindsym XF86LaunchA			exec
+#bindsym XF86LaunchB			exec
+#bindsym XF86Launch2			exec
+#bindsym XF86Launch3			exec
+#bindsym XF86Launch4			exec
+#bindsym XF86Launch5			exec
+#bindsym XF86Launch6			exec
+#bindsym XF86Launch7			exec
+#bindsym XF86Launch8			exec
+#bindsym XF86Launch9			exec
+#bindsym XF86AudioMicMute		exec
+#bindsym XF86TouchpadToggle		exec
+#bindsym XF86TouchpadOn			exec
+#bindsym XF86TouchpadOff		exec
+#bindsym XF86Suspend			exec
+#bindsym XF86Close				exec
+#bindsym XF86WebCam				exec
+#bindsym XF86Mail				exec
+#bindsym XF86Messenger			exec
+#bindsym XF86Search				exec
+#bindsym XF86Go					exec
+#bindsym XF86Finance			exec
+#bindsym XF86Game				exec
+#bindsym XF86Shop				exec
 #bindsym XF86MonBrightnessDown	exec
 #bindsym XF86MonBrightnessUp	exec
-#bindsym XF86AudioMedia		exec
-#bindsym XF86Display		exec
-#bindsym XF86KbdLightOnOff	exec
-#bindsym XF86Reply			exec
-#bindsym XF86MailForward	exec
-#bindsym XF86Save			exec
-#bindsym XF86Documents		exec
-#bindsym XF86Battery		exec
-#bindsym XF86Bluetooth		exec
-#bindsym XF86WLAN 			exec
+#bindsym XF86AudioMedia			exec
+#bindsym XF86Display			exec
+#bindsym XF86KbdLightOnOff		exec
+#bindsym XF86Reply				exec
+#bindsym XF86MailForward		exec
+#bindsym XF86Save				exec
+#bindsym XF86Documents			exec
+#bindsym XF86Battery			exec
+#bindsym XF86Bluetooth			exec
+#bindsym XF86WLAN				exec
 
 include /etc/sway/config.d/*
