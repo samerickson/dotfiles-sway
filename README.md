@@ -24,14 +24,16 @@ Current software:
 -----------------
 - [nautilus](https://wiki.archlinux.org/index.php/GNOME/Files) - File manager.
 - [imv](https://github.com/eXeC64/imv) - Image previews
+- [wf-recorder](https://github.com/ammen99/wf-recorder) - Screen recorder
+- [grim](https://github.com/emersion/grim) - Screen shot tool
 - [firefox](https://wiki.archlinux.org/index.php/Firefox) - Web browser
 - [discord](https://wiki.archlinux.org/index.php/Discord) - Social media
 - [lux](https://wiki.archlinux.org/index.php/Backlight) - Screen back light adjustments
 - [lxappearance](https://www.archlinux.org/packages/community/x86_64/lxappearance/) - Theme manager
 - [neovim](https://github.com/neovim/neovim) - Text editor
 - [pavucontrol](https://wiki.archlinux.org/index.php/PulseAudio/Configuration) - Audio controller
-- [pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer) - This is used for keybindings involving audio controls
-- [sway](https://github.com/swaywm/sway) - Window manager
+- [pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer) - This is used for key bindings involving audio controls
+- [sway](https://github.com/swaywm/sway) - Window manager (Looking to replace this)
 - [kitty](https://github.com/kovidgoyal/kitty) - Terminal Emulator
 
 Roadmap for this branch
@@ -39,12 +41,6 @@ Roadmap for this branch
 **Current development plan (no particular order):**
 If you have solved one of the problems below, please create a pull request.
 
-- Create a useful status bar
-	- Add disk usage 
-	- Add memory usage
-	- Add download speed?
-- Add tap to click
-- Video editor
-- Screenshots
-- Screen recorder
-- Convert keymappings to pdf that can be displayed to the user when a specific keybinding is pressed.
+- Convert key mappings to pdf that can be displayed to the user when a specific key binding is pressed.
+- Current screen shot tool takes a screen shot of the entire screen, including external monitors if they are connected. I would like to be able to select which screen to take for the screen shot, rather than including them all each time.
+- Find a better way of connecting to wifi. Currently using `nmtui` which works, but does not connect to enterprise wifi, which is a problem for students who want to connect to their university wifi.
