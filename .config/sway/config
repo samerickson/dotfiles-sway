@@ -20,13 +20,13 @@ set $browser firefox
 set $file nautilus
 set $menu "rofi -show run"
 
-# Change the keyboard settings for when my external keyboard is connected
-input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
-	xkb_options caps:escape
-	repeat_delay 250
-	repeat_rate 25
-}
-input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
+# Change the keyboard settings [this is probably a terrible idea as it is applying
+#	those settings to all inputs, even those that are not keyboards.
+#	I have been playing around with: 
+#		`swaymsg -t gti_inputs | jq -r '.[] | select(.type=="keyboard") | .name" 
+#	to get the identifyer, but still has a simular issues in that things that are not
+#	actually a keyboard, show up as a keyboard...
+input * {
 	xkb_options caps:escape
 	repeat_delay 250
 	repeat_rate 25
