@@ -6,7 +6,7 @@ let mapleader =","
 	filetype plugin on
 	syntax on
 	set listchars=tab:>-,trail:·
-	set sw=4 sts=4 ts=8 noet
+	set sw=4 sts=4 ts=4 noet
 	set splitbelow splitright
 
 " Enable autocompletion:
