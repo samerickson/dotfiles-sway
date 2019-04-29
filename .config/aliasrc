@@ -4,6 +4,9 @@
 # Map vi and vim to neovim
 alias	vim="nvim" vi="nvim"
 
+# System commands
+alias	mx="chmod a+x"
+
 # Reload shell environment
 alias	src="source ~/.profile"
 
