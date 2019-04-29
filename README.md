@@ -36,11 +36,18 @@ Current software:
 - [sway](https://github.com/swaywm/sway) - Window manager (Looking to replace this)
 - [kitty](https://github.com/kovidgoyal/kitty) - Terminal Emulator
 
+
 Roadmap for this branch
 -----------------------
 **Current development plan (no particular order):**
 If you have solved one of the problems below, please create a pull request.
-
+- Write a list of dependancies
+- keybindings and tools should first check if all required tools are installed, notifying the user that what tools they need to install to use the desired functionality.
 - Convert key mappings to pdf that can be displayed to the user when a specific key binding is pressed.
-- Current screen shot tool takes a screen shot of the entire screen, including external monitors if they are connected. I would like to be able to select which screen to take for the screen shot, rather than including them all each time.
 - Find a better way of connecting to wifi. Currently using `nmtui` which works, but does not connect to enterprise wifi, which is a problem for students who want to connect to their university wifi.
+
+- Add i3blocks default configuration
+- Write post in wiki about screenshots
+- Fix keyboard selection method (more info in sway config)
+- Add module to i3blocks that checks if `mako` is installed, displaying a string to the user that some functionality may not preform as inteneded without a notification daemon. 
+- Implement notifications thoughout the dotfiles
