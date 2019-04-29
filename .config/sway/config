@@ -12,6 +12,8 @@ bar {
 	}
 }
 
+exec mako
+
 # Variables
 # =========
 set $mod Mod4
@@ -20,13 +22,13 @@ set $browser firefox
 set $file nautilus
 set $menu "rofi -show run"
 
-# Change the keyboard settings [this is probably a terrible idea as it is applying
-#	those settings to all inputs, even those that are not keyboards.
-#	I have been playing around with: 
-#		`swaymsg -t gti_inputs | jq -r '.[] | select(.type=="keyboard") | .name" 
-#	to get the identifyer, but still has a simular issues in that things that are not
-#	actually a keyboard, show up as a keyboard...
-input * {
+input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
+	xkb_options caps:escape
+	repeat_delay 250
+	repeat_rate 25
+}
+
+input 1452:610Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
 	repeat_delay 250
 	repeat_rate 25
@@ -62,6 +64,10 @@ floating_modifier $mod normal
 	# Start file manager
 	bindsym $mod+f			exec $file
 
+	# Start screen recording / stop screen recording
+	bindsym $mod+z			exec ~/.bin/screencast.sh
+	bindsym $mod+shift+z	exec kill -s $(pidof wf-recorder)
+
 	# kill focused window
 	bindsym $mod+Shift+q 	kill
 
@@ -69,7 +75,7 @@ floating_modifier $mod normal
 	bindsym $mod+d 			exec $menu
 
 	# Take screen shot
-	bindsym --release $mod+p exec grim -o $(~/.bin/select_focused.sh)~/Pictures/$(date +%Y%m%d%h%m%s).png
+	bindsym --release $mod+p exec grim -o $(~/.bin/select_focused.sh)~/Pictures/$(date +%Y%m%d%h%m%s).png | notify-send "Captured screenshot of $(~/.bin/select_focus.sh)"
 
 	# Open network manager / current manager does not work with enterprise wifi
 	bindsym $mod+shift+w	exec nmtui
