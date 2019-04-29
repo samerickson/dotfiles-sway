@@ -69,7 +69,7 @@ floating_modifier $mod normal
     bindsym $mod+d 			exec $menu
 
 	# Take screen shot
-	bindsym --release $mod+p exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/$(date +%Y%m%d%h%m%s).png
+	bindsym --release $mod+p exec grim -o $(~/.bin/select_focused.sh)~/Pictures/$(date +%Y%m%d%h%m%s).png
 
 	# Open network manager / current manager does not work with enterprise wifi
 	bindsym $mod+shift+w	exec nmtui
