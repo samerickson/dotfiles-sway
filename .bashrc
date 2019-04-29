@@ -10,9 +10,6 @@ PS1='$ '
 # Set ls to use color and set that color to bold green
 export LS_COLORS='di=1;32'
 
-# Enable color mode in grep by default
-export GREP_OPTIONS='--color=always'
-
 # Apps
 export EDITOR="nvim"
 export TERMINAL="kitty"
