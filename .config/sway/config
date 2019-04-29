@@ -55,7 +55,7 @@ floating_modifier $mod normal
 # ===========
     # start a terminal
     bindsym $mod+Return exec $term
-	
+
 	# Start web browser
 	bindsym $mod+w 			exec $browser
 
@@ -67,9 +67,9 @@ floating_modifier $mod normal
 
     # start your launcher
     bindsym $mod+d 			exec $menu
-	
+
 	# Take screen shot
-	bindsym $mod+p 			exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
+	bindsym --release $mod+p exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/$(date +%Y%m%d%h%m%s).png
 
 	# Open network manager / current manager does not work with enterprise wifi
 	bindsym $mod+shift+w	exec nmtui
@@ -91,7 +91,7 @@ floating_modifier $mod normal
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
-	
+
 	# Move windows around
     bindsym $mod+Shift+h move left
     bindsym $mod+Shift+j move down
@@ -115,7 +115,7 @@ floating_modifier $mod normal
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
-    
+
 	# Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -146,7 +146,7 @@ floating_modifier $mod normal
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+space floating toggle
-	
+
     # Swap focus between the tiling area and the floating area
     bindsym $mod+shift+space focus mode_toggle
 
@@ -157,7 +157,7 @@ floating_modifier $mod normal
 # ===========
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
-	
+
 	# View windows in scratchpad
     bindsym $mod+minus scratchpad show
 
