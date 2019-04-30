@@ -6,12 +6,17 @@ markup=pango
 interval=30
 command=date
 
+[battery]
+label=🔋
+interval=30
+command=~/.config/i3blocks/scripts/battery.sh
+
 [volume]
 interval=once
 command=~/.config/i3blocks/scripts/volume.sh
 signal=10
 
-[ip]
-interval=once
-color=#91E78B
-command=hostname -i | awk '{ print $1 }'
+[network]
+interval=60
+command=~/.config/i3blocks/scripts/network.sh
+
