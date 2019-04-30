@@ -25,7 +25,7 @@ Current software:
 - [neovim](https://github.com/neovim/neovim) - Text editor
 - [pavucontrol](https://wiki.archlinux.org/index.php/PulseAudio/Configuration) - Audio controller
 - [pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer) - This is used for key bindings involving audio controls
-- [sway](https://github.com/swaywm/sway) - Window manager (Looking to replace this)
+- [sway](https://github.com/swaywm/sway) - Window manager 
 - [kitty](https://github.com/kovidgoyal/kitty) - Terminal Emulator
 
 
