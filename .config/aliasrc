@@ -41,6 +41,9 @@ alias	gcm="git commit -S -m" \
 # FUNCTIONS:
 # ==========
 
+# Delete nvim swapfiles
+function delswp() { rm ~/.local/share/nvim/swap/*; }
+
 # Add the GNUv3.0 License to the current directory
 license() { curl https://samerickson.me/files/LICENSE-GNU3 > LICENSE; }
 
