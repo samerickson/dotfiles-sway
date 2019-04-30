@@ -15,6 +15,7 @@ Make sure that you have [mako](https://github.com/emersion/mako) installed for i
 Current software:
 -----------------
 - [nautilus](https://wiki.archlinux.org/index.php/GNOME/Files) - File manager.
+- [ranger](https://github.com/ranger/ranger) - ALternate file manager.
 - [imv](https://github.com/eXeC64/imv) - Image previews
 - [wf-recorder](https://github.com/ammen99/wf-recorder) - Screen recorder
 - [grim](https://github.com/emersion/grim) - Screen shot tool
