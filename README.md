@@ -29,6 +29,16 @@ Current software:
 - [sway](https://github.com/swaywm/sway) - Window manager 
 - [kitty](https://github.com/kovidgoyal/kitty) - Terminal Emulator
 
+I want to use these dotfiles for my own repository
+--------------------------------------------------
+Great, here is some information to get you started.
+
+1. Clone the repository if you have not already.
+2. Create your own [git bare](https://www.atlassian.com/git/tutorials/dotfiles) dot files repository on your local machine.
+3. Create a `dotfiles` repository on your favorite hosting service [`Github`, `Gitlab`, `Bitbucket`]
+4. Add the URL to that repository as a remote to your dotfiles repository
+5. At this point you are all set to start backing up your dotfiles, and sharing them with others.
+
 
 Roadmap for this branch
 -----------------------
