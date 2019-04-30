@@ -8,6 +8,15 @@ This is the master branch containing my
 [tiling window manager](https://en.wikipedia.org/wiki/Tiling_window_manager) of choice. 
 For more information: [why use a tiling window manager?](https://www.youtube.com/watch?v=Lj1IfdKY0CU).
 
+Installing
+----------
+**Warning:** Backup your current dotfiles before proceeding. THe following commands **will** overwrite any existing files. 
+```
+git clone https://github.com/samerickson/dotfiles.git
+cd dotfiles
+bash install.sh
+```
+
 Dependencies
 ------------
 Make sure that you have [mako](https://github.com/emersion/mako) installed for important notifications about the system. 
@@ -31,6 +40,8 @@ Current software:
 
 I want to use these dotfiles for my own repository
 --------------------------------------------------
+I have written a [blog](https://samerickson.me/blog/sharing-your-dotfiles/) post about this process, our you can read the **TL;DR** version below.
+
 Great, here is some information to get you started.
 
 1. Clone the repository if you have not already.
