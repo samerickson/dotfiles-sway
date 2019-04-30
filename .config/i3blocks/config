@@ -1,0 +1,17 @@
+# ~/.config/i3blocks/config
+
+markup=pango
+
+[clock]
+interval=30
+command=date
+
+[volume]
+interval=once
+command=~/.config/i3blocks/scripts/volume.sh
+signal=10
+
+[ip]
+interval=once
+color=#91E78B
+command=hostname -i | awk '{ print $1 }'

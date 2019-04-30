@@ -5,6 +5,7 @@
 bar {
 	position bottom
 	status_command i3blocks
+	font Inconsolata Nerd Font
 	colors {
 		statusline #ffffff
 		background #323232
@@ -187,9 +188,9 @@ bindsym $mod+r mode "resize"
 # Multi-media keys:
 # =================
 bindsym Print				exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
-bindsym XF86AudioMute 		exec ([ "$(pulsemixer --get-mute)" == 0 ] && pulsemixer --mute) || (pulsemixer --unmute)
-bindsym XF86AudioLowerVolume 	exec pulsemixer --change-volume -5
-bindsym XF86AudioRaiseVolume 	exec pulsemixer --change-volume +5
+bindsym XF86AudioMute 		exec ([ "$(pulsemixer --get-mute)" == 0 ] && pulsemixer --mute) || (pulsemixer --unmute) && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume 	exec pulsemixer --change-volume -5 && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume 	exec pulsemixer --change-volume +5 && pkill -RTMIN+10 i3blocks
 bindsym XF86PowerOff 		exec swaynag -t warning -m 'Are you sure you want to power machine off?' -b "Yes, shutdown now" 'shutdown now'
 
 
