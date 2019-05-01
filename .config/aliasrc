@@ -48,6 +48,15 @@ function delswp() { rm ~/.local/share/nvim/swap/*; }
 license() { curl https://samerickson.me/files/LICENSE-GNU3 > LICENSE; }
 
 # Backup script for when I have my backup usb connected
-bckup() { 
-	rsync -av --delete $HOME /mnt/backups/$(date +%Y-%m-%d_%H:%m)
+bckup() { rsync -av --delete $HOME /mnt/backups/$(date +%Y-%m-%d_%H:%m); }
+
+# Print plain text in a nice looking way
+lps() { 
+	if [ "$@" -eq 1 ]; then
+		lpr -o page-left=54 -o page-right=54 -p "$1"
+	elif [ "$@" -eq 2]; then
+		lpr -o page-left=54 -o page-right=54 -p "$1" -# "$2"
+	else
+		echo "Incorrect usage" 
+	fi
 }
