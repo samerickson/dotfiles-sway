@@ -8,3 +8,6 @@ image/png=img.desktop;
 image/jpeg=img.desktop;
 image/gif=img.desktop;
 application/rss+xml=rss.desktop
+
+[Added Associations]
+text/x-sh=org.gnome.gedit.desktop;
