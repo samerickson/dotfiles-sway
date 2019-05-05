@@ -157,8 +157,8 @@ floating_modifier $mod normal
 	# Swap focus between the tiling area and the floating area
 	bindsym $mod+shift+space focus mode_toggle
 
-	# move focus to the parent container
-	bindsym $mod+a focus parent
+	# Open a calculator
+	bindsym $mod+a exec $term -e bc
 
 # Scratchpad:
 # ===========
