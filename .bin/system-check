@@ -21,6 +21,8 @@ DEPS=(
 	"ttf-emojione"
 	"ttf-symbola"
 	"nerd-fonts-inconsolata"
+	"matcha-gtk-theme"
+	"matcha-icon-theme"
 ) 
 
 # Checks if the passed parameter maps to a program that is installed on the system
