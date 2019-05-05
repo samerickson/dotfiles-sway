@@ -13,7 +13,7 @@ with sudo (as it makes use of the command `pacman -Qe` and thus requires sudo).
 ```
 This will tell you if you are missing a required package.
 
-Dependancies
+Dependencies
 ------------
 ```
 sway
