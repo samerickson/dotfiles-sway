@@ -8,11 +8,14 @@ bar {
 	font Inconsolata Nerd Font
 	colors {
 		statusline #ffffff
-		background #323232
-		inactive_workspace #32323200 #32323200 #5c5c5c
+		background #00000055
+		focused_workspace	#62feff88 #62feff88 #ffffffff
+		active_workspace	#215959aa #215959aa #ffffff88
+		inactive_workspace	#215959aa #215959aa #ffffff88
 	}
 }
 
+# Start notification daemon
 exec mako
 
 # Variables
@@ -39,10 +42,9 @@ input 1452:610Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 for_window [class="^.*"] border pixel 2
 for_window [app_id="^.*"] border pixel 2
 for_window [app_id="terminal_scratchpad"] move scratchpad, resize set 1000 400
-#for_window [class="^floating"] resize set 800 300
 
 # Add gaps between the windows [note this applies to new windows]
-# gaps inner 8
+gaps inner 8
 
 # Set wallpaper
 output * bg ~/.config/wallpaper.* fill
@@ -80,7 +82,7 @@ floating_modifier $mod normal
 	bindsym $mod+d 			exec $menu
 
 	# Take screen shot
-	bindsym --release $mod+p exec grim -o $(~/.bin/select_focused.sh)~/Pictures/$(date +%Y%m%d%h%m%s).png | notify-send "Captured screenshot of $(~/.bin/select_focus.sh)"
+	bindsym --release $mod+p exec ~/.bin/screenshot
 
 	# Open network manager / current manager does not work with enterprise wifi
 	bindsym $mod+shift+w	exec nmtui

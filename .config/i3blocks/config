@@ -3,8 +3,8 @@
 markup=pango
 
 [clock]
-interval=30
-command=date
+interval=15
+command=date +%A,\ %b\ %d\ %H:%m
 
 [battery]
 label=🔋
