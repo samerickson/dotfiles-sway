@@ -60,13 +60,13 @@ gcd() { cd "$(git rev-parse --show-toplevel)"; }
 commitlist() { git log --pretty=format: %h - %an, %ar : %s; }
 
 # Print plain text in a nice looking way
-lps() { 
-	if [ "$@" -eq 1 ]; then
+print() { 
+	if [ "$#" -eq 1 ]; then
 		lpr -o page-left=54 -o page-right=54 -p "$1"
-	elif [ "$@" -eq 2]; then
+	elif [ "$#" -eq 2 ]; then
 		lpr -o page-left=54 -o page-right=54 -p "$1" -# "$2"
 	else
-		echo "Incorrect usage" 
+		echo "Incorrect usage: print <file> [optional-num-copies]" 
 	fi
 }
 
