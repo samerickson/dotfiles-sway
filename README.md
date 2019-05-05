@@ -9,7 +9,7 @@ Checking system compatibility
 To check if these dotfiles will be compatible on your system run cthe script `~/.bin/system-check`
 with sudo (as it makes use of the command `pacman -Qe` and thus requires sudo).
 ```
-	sudo system-check
+sudo system-check
 ```
 This will tell you if you are missing a required package.
 

@@ -38,17 +38,19 @@ input 1452:610Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 # Select the border size
 for_window [class="^.*"] border pixel 2
 for_window [app_id="^.*"] border pixel 2
+for_window [app_id="terminal_scratchpad"] move scratchpad, resize set 1000 400
+#for_window [class="^floating"] resize set 800 300
 
 # Add gaps between the windows [note this applies to new windows]
 # gaps inner 8
 
 # Set wallpaper
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/.config/wallpaper.* fill
 
 # Set pixel density scaling
 output eDP-1 scale 2
-output eDP-1 pos 0 0 res 2880x1800
-output HDMI-A-3 pos -1920 0 res 1920x1080
+output eDP-1 pos 1920 0 res 2880x1800
+output HDMI-A-3 pos 0 0 res 1920x1080
 
 # This makes it so that holding down mod allows you to change the location of
 #	windows using the mouse.
@@ -58,6 +60,8 @@ floating_modifier $mod normal
 # ===========
 	# start a terminal
 	bindsym $mod+Return exec $term
+	bindsym $mod+Shift+Return exec $term --name=terminal_scratchpad; scratchpad show
+	
 
 	# Start web browser
 	bindsym $mod+w		exec $browser
