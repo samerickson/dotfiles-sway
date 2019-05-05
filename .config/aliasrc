@@ -50,6 +50,9 @@ license() { curl https://samerickson.me/files/LICENSE-GNU3 > LICENSE; }
 # Backup script for when I have my backup usb connected
 bckup() { rsync -av --delete $HOME /mnt/backups/$(date +%Y-%m-%d_%H:%m); }
 
+# Search bash history
+hist() { history | grep $@; }
+
 # Find and go to root directory of current git repository
 gcd() { cd "$(git rev-parse --show-toplevel)"; }
 
