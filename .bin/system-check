@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# This script checks the current system for potencial compatibility issues with
+#	using Sam Ericksons dotfiles: https://github.com/samerickson/dotfiles/
+
+DEPS=(
+	"sway"
+	"i3blocks"
+	"bc"
+	"mako"
+	"rofi"
+	"termite"
+	"firefox"
+	"nautilus"
+	"grim"
+	"wf-recorder"
+	"xorg-server-xwayland"
+	"lux"
+	"neovim"
+	"pulsemixer"
+	"ttf-emojione"
+	"ttf-symbola"
+	"nerd-fonts-inconsolata"
+) 
+
+# Checks if the passed parameter maps to a program that is installed on the system
+#	returning an exit code of 1 if not
+checkinstalled() {
+	pacman -Qe $1 >/dev/null
+}
+
+for i in "${DEPS[@]}"; do
+	checkinstalled $i 
+done
