@@ -4,7 +4,7 @@
 [[ $- != *i* ]] && return
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
-# Set bash prompt
+# Set bash prompt [simple and clean]
 PS1='$ '
 
 # Set ls to use color and set that color to bold green
@@ -16,6 +16,9 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 export READER="evince"
 export FILE="nautilus"
+
+# Fixes error with signing
+export GPG_TTY=$(tty)
 
 # Some wayland settings
 export GDK_BACKEND=wayland
