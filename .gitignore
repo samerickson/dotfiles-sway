@@ -13,3 +13,9 @@ Documents/
 Downloads/
 Pictures/
 Videos/
+.config/VirtualBox
+.config/dconf
+.config/transmission
+.config/pulse
+.config/neofetch
+.config/htop
