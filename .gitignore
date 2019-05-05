@@ -1,0 +1,9 @@
+.bash_logout
+.bash_history
+.esd_auth
+.mozilla/
+.ssh/
+.gnupg/
+.dotfiles
+.cache/
+.local/
