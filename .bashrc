@@ -1,8 +1,8 @@
 # ~/.bashrc
 
-# check if running interactivly and if using terminal emulator
 [[ $- != *i* ]] && return
 [[ $DISPLAY ]] && shopt -s checkwinsize
+PATH="$PATH:$HOME/.bin"
 
 # Set bash prompt [simple and clean]
 PS1='$ '
@@ -17,14 +17,8 @@ export BROWSER="firefox"
 export READER="evince"
 export FILE="nautilus"
 
-# Fixes error with signing
 export GPG_TTY=$(tty)
-
-# Some wayland settings
 export GDK_BACKEND=wayland
 
-# load alias file
 [ -f ~/.config/aliasrc ] && . ~/.config/aliasrc
-
-# Source bash auto complete files
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
