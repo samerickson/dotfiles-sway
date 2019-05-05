@@ -18,7 +18,7 @@ exec mako
 # Variables
 # =========
 set $mod Mod4
-set $term kitty
+set $term termite
 set $browser firefox
 set $file nautilus
 set $menu "rofi -show run"
