@@ -1,0 +1,8 @@
+[Unit]
+Description=Disables intterupts causing high cpu usage
+
+[Service]
+ExecStart=/bin/bash -c 'echo "disable" > /sys/firmware/acpi/interrupts/gpe06; echo "disable" > /sys/firmware/acpi/interrupts/sci; echo "disable" > /sys/firmware/acpi/interrupts/gpe17'
+
+[Install]
+WantedBy=multi-user.target
