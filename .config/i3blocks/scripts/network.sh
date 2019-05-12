@@ -7,6 +7,11 @@
 #		GREEN = INTERNET CONNECTION
 
 # Check for internet connection
-[ $(cat /sys/class/net/wlp*/operstate) == "up" ] && color="#91e78b" || color="#f26d6d"
+if [ $(cat /sys/class/net/ens*/operstate) == "up" ] || \
+	[ $(cat /sys/class/net/wlp*/operstate) == "up" ]; then
+	color="#91e78b"
+else
+	color="#f26d6d"
+fi 
 
 printf "<span color='%s'>%s</span>" "$color" "$(hostname -i | awk '{ print $1 }')"
