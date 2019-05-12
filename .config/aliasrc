@@ -13,7 +13,7 @@ alias	src="source ~/.profile; echo 'reloaded shell'"
 # Directories
 alias	b="cs ~/.bin" \
 		cf="cs ~/.config" \
-		D="cs ~/Documnents" \
+		D="cs ~/Documents" \
 		d="cs ~/Downloads" \
 		h="cs ~"
 
