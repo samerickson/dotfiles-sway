@@ -26,13 +26,12 @@ set $browser firefox
 set $file nautilus
 set $menu "rofi -show run"
 
-input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
+input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
-	repeat_delay 250
+	repeat_delay 200
 	repeat_rate 25
 }
-
-input 1452:610Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
+input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
 	xkb_options caps:escape
 	repeat_delay 250
 	repeat_rate 25
@@ -50,8 +49,7 @@ gaps inner 8
 output * bg ~/.config/wallpaper.* fill
 
 # Set pixel density scaling
-output eDP-1 scale 2
-output eDP-1 pos 1920 0 res 2880x1800
+output eDP-1 pos 1920 0 scale 2 res 2880x1800
 output HDMI-A-3 pos 0 0 res 1920x1080
 
 # This makes it so that holding down mod allows you to change the location of
