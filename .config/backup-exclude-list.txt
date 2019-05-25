@@ -1,0 +1,6 @@
+/dev
+/proc
+/tmp
+/mnt
+/sys
+/sbin
