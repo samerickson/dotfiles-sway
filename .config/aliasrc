@@ -15,7 +15,9 @@ alias	b="cs ~/.bin" \
 		cf="cs ~/.config" \
 		D="cs ~/Documents" \
 		d="cs ~/Downloads" \
-		h="cs ~"
+		h="cs ~" \
+		s="cs ~/Github/samerickson.me" \
+		g="~/Github"
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR ~/.bashrc" \
@@ -41,7 +43,7 @@ alias	dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
 		dotl="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME log"
 
 # Saving a few key presses off frequently uses git commands
-alias	gcm="git commit -S -m" \
+alias	gc="git commit -S -m" \
 		gs="git status" \
 		ga="git add"
 
@@ -55,7 +57,7 @@ function delswp() { rm ~/.local/share/nvim/swap/*; }
 license() { curl https://samerickson.me/files/LICENSE-GNU3 > LICENSE; }
 
 # Backup script for when I have my backup usb connected
-bckup() { rsync -av --delete $HOME /mnt/backups/$(date +%Y-%m-%d_%H:%m); }
+bckup() { rsync -av --delete --exclude-from $HOME/.config/backup-exclude-list.txt / /mnt/backups/$(date +%Y-%m-%d_%H:%m); }
 
 # Search bash history
 hist() { history | grep $@; }

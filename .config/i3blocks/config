@@ -17,6 +17,6 @@ command=~/.config/i3blocks/scripts/volume.sh
 signal=10
 
 [network]
-interval=60
+interval=15
 command=~/.config/i3blocks/scripts/network.sh
 

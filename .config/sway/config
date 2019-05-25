@@ -146,7 +146,7 @@ floating_modifier $mod normal
 	# Change the layout of the current workspace
 	bindsym $mod+s layout stacking
 	bindsym $mod+t layout tabbed
-	bindsym $mod+e toggle split
+	bindsym $mod+e layout toggle split
 
 	# You can "split" the current object of your focus with
 	# $mod+b or $mod+v, for horizontal and vertical splits
