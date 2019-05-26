@@ -7,6 +7,7 @@ PATH="$PATH:$HOME/.bin"
 
 export EDITOR="nvim"
 export TERM="termite"
+export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="nautilus"
