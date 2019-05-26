@@ -17,7 +17,7 @@ alias	b="cs ~/.bin" \
 		d="cs ~/Downloads" \
 		h="cs ~" \
 		s="cs ~/Github/samerickson.me" \
-		g="~/Github"
+		g="cs ~/Github"
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR ~/.bashrc" \
