@@ -22,7 +22,7 @@ exec mako
 # =========
 set $mod Mod4
 set $term termite
-set $browser firefox
+set $browser brave
 set $file nautilus
 set $menu "rofi -show run"
 
@@ -40,7 +40,6 @@ input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
 # Select the border size
 for_window [class="^.*"] border pixel 2
 for_window [app_id="^.*"] border pixel 2
-for_window [app_id="terminal_scratchpad"] move scratchpad, resize set 1000 400
 
 # Add gaps between the windows [note this applies to new windows]
 gaps inner 8
