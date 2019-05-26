@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script handles changes in audio settings via keyboard shortcuts in sway
+#	applying those settings to the system, and updating the status bar.
+
 usage() {
 	echo "Usage:"
 	echo "	audio.sh mute	: toggle mute on machine"
