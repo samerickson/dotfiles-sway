@@ -22,7 +22,7 @@ exec mako
 # =========
 set $mod Mod4
 set $term termite
-set $browser brave
+set $browser firefox
 set $file nautilus
 set $menu "rofi -show run"
 

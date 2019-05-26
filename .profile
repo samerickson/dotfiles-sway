@@ -2,7 +2,7 @@
 
 export EDITOR="nvim"
 export TERMINAL="termite"
-export BROWSER="brave"
+export BROWSER="firefox"
 export READER="evince"
 export FILE="nautilus"
 
