@@ -8,7 +8,7 @@ alias	vim="nvim" vi="nvim"
 alias	mx="chmod a+x"
 
 # Reload shell environment
-alias	src="source ~/.profile; echo 'reloaded shell'"
+alias	src="source ~/.bashrc; echo 'reloaded .bashrc'"
 
 # Directories
 alias	b="cs ~/.bin" \
@@ -34,13 +34,15 @@ alias 	ls="ls --color=auto" \
 		lah="ls -lah" \
 
 # Managing dotfiles / otherwise that is a lot of typting for routine file managment
-alias	dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
+alias	dotf="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
 		dota="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add" \
 		dots="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status" \
-		dotc="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S -m" \
+		dotc="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S" \
+		dotcm="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S -m" \
 		dotb="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch" \
 		dotch="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout" \
-		dotl="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME log"
+		dotl="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME log" \
+		dotd="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff"
 
 # Saving a few key presses off frequently uses git commands
 alias	gc="git commit -S -m" \
