@@ -2,6 +2,16 @@
 
 markup=pango
 
+[disk-usage-root]
+interval=60
+label=/:
+command=~/.config/i3blocks/scripts/disk.sh /
+
+[disk-usage-home]
+interval=60
+label=HOME:
+command=~/.config/i3blocks/scripts/disk.sh /home
+
 [clock]
 interval=15
 command=date +%A,\ %b\ %d\ %H:%m
@@ -19,4 +29,3 @@ signal=10
 [network]
 interval=15
 command=~/.config/i3blocks/scripts/network.sh
-
