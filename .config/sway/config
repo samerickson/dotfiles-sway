@@ -18,6 +18,12 @@ bar {
 # Start notification daemon
 exec mako
 
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 62feff' \
+	timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 62feff'
+
 # Variables
 # =========
 set $mod Mod4
@@ -37,9 +43,14 @@ input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
 	repeat_rate 25
 }
 
+input 2821:6170:ASUS_ROG_GLADIUS {
+	scroll_factor 6
+}
+
 # Select the border size
 for_window [class="^.*"] border pixel 2
 for_window [app_id="^.*"] border pixel 2
+for_window [app_id="^.*_floating"] floating enable
 
 # Add gaps between the windows [note this applies to new windows]
 gaps inner 8
@@ -60,9 +71,8 @@ floating_modifier $mod normal
 	# start a terminal
 	bindsym $mod+Return exec $term
 	
-	# This does not currently function as I want
-	#bindsym $mod+Shift+Return exec $term --name=terminal_scratchpad, scratchpad show
-	
+	# spawn a floating terminal
+	bindsym $mod+Shift+Return exec ~/.bin/floating-term.sh
 
 	# Start web browser
 	bindsym $mod+w		exec $browser
@@ -84,13 +94,28 @@ floating_modifier $mod normal
 	bindsym --release $mod+p exec ~/.bin/screenshot
 
 	# Open network manager / current manager does not work with enterprise wifi
-	bindsym $mod+shift+w	exec $term -e nmtui
+	bindsym $mod+shift+w	exec ~/.bin/floating-term.sh nmtui
 
 	# reload the configuration file
 	bindsym $mod+Shift+c reload
 
 	# exit sway (logs you out of your Wayland session)
-	bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
+	bindsym $mod+Shift+e exec swaynag -t warning -m "Exit sway?" -b "YES" "swaymsg exit"
+
+# Function Keys:
+# ==============
+	bindsym F1		
+	bindsym F2
+	bindsym F3
+	bindsym F4
+	bindsym F5
+	bindsym F6
+	bindsym F7
+	bindsym F8
+	bindsym F9
+	bindsym F10
+#	bindsym F11	 Full screen toggle	
+	bindsym F12
 
 # Moving around:
 # ==============
