@@ -10,19 +10,21 @@ sudo pacman -S --noconfirm git wget
 install_yay() {
 	git clone https://aur.archlinux.org/yay.git /tmp/yay
 	cd /tmp/yay
-	makepkg -si
+	makepkg --noconfirm -si >/dev/null
 	rm -r /tmp/yay
 }
 
 aur_install() {
-	yay -S 
+	yay -S --noconfirm
 }
 
 pac_install() {
 	sudo pacman -S --noconfirm $@
 }
-
 # Add bootloader information
+configure-boot-loader() {
+	wget https://samerickson.me/files/bootloader.conf
+}
 
 # Add systemd files
 
