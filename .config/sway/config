@@ -19,16 +19,16 @@ bar {
 exec mako
 
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 62feff' \
-	timeout 600 'swaymsg "output * dpms off"' \
+    timeout 300 'swaylock -f -c 3f6375' \
+	timeout 330 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-	before-sleep 'swaylock -f -c 62feff'
+	before-sleep 'swaylock -f -c 3f6375'
 
 # Variables
 # =========
 set $mod Mod4
 set $term termite
-set $browser firefox
+set $browser env GDK_BACKEND=wayland firefox
 set $file nautilus
 set $menu "rofi -show run"
 
@@ -44,7 +44,8 @@ input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
 }
 
 input 2821:6170:ASUS_ROG_GLADIUS {
-	scroll_factor 6
+	scroll_factor 2
+	natural_scroll enabled
 }
 
 # Window specific settings
@@ -74,7 +75,7 @@ floating_modifier $mod normal
 	bindsym $mod+Return exec $term
 	
 	# spawn a floating terminal
-	bindsym $mod+Shift+Return exec ~/.bin/floating-term.sh
+	bindsym $mod+Shift+Return exec ~/.local/share/bin/floating-term.sh
 
 	# Start web browser
 	bindsym $mod+w		exec $browser
@@ -83,7 +84,7 @@ floating_modifier $mod normal
 	bindsym $mod+f			exec $file
 
 	# Start screen recording / stop screen recording
-	bindsym $mod+z			exec ~/.bin/screencast.sh
+	bindsym $mod+z			exec ~/.local/share/bin/screencast.sh
 	bindsym $mod+shift+z	exec kill -2 $(pidof wf-recorder)
 
 	# kill focused window
@@ -93,10 +94,10 @@ floating_modifier $mod normal
 	bindsym $mod+d 			exec $menu
 
 	# Take screen shot
-	bindsym --release $mod+p exec ~/.bin/screenshot
+	bindsym --release $mod+p exec ~/.local/share/bin/screenshot
 
 	# Open network manager / current manager does not work with enterprise wifi
-	bindsym $mod+shift+w	exec ~/.bin/floating-term.sh nmtui
+	bindsym $mod+shift+w	exec ~/.local/share/bin/floating-term.sh nmtui
 
 	# reload the configuration file
 	bindsym $mod+Shift+c reload
@@ -220,9 +221,9 @@ bindsym $mod+r mode "resize"
 # Multi-media keys:
 # =================
 bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
-bindsym XF86AudioMute			exec ~/.bin/audio.sh mute 
-bindsym XF86AudioRaiseVolume 	exec ~/.bin/audio.sh add
-bindsym XF86AudioLowerVolume 	exec ~/.bin/audio.sh sub
+bindsym XF86AudioMute			exec ~/.local/share/bin/audio.sh mute 
+bindsym XF86AudioRaiseVolume 	exec ~/.local/share/bin/audio.sh add
+bindsym XF86AudioLowerVolume 	exec ~/.local/share/bin/audio.sh sub
 bindsym XF86PowerOff 		exec swaynag -t warning -m 'Are you sure you want to power machine off?' -b "Yes, shutdown now" 'shutdown now'
 
 
