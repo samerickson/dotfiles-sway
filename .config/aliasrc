@@ -11,13 +11,15 @@ alias	mx="chmod a+x"
 alias	src="source ~/.bashrc; echo 'reloaded .bashrc'"
 
 # Directories
-alias	b="cs ~/.bin" \
+alias	b="cs ~/.local/share/bin" \
 		cf="cs ~/.config" \
 		D="cs ~/Documents" \
 		d="cs ~/Downloads" \
 		h="cs ~" \
 		s="cs ~/Github/samerickson.me" \
-		g="cs ~/Github"
+		g="cs ~/Github" \
+		p="cs ~/.local/private" \
+		t="cs ~/Downloads/transmission"
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR ~/.bashrc" \
@@ -36,7 +38,7 @@ alias 	ls="ls --color=auto" \
 # Managing dotfiles / otherwise that is a lot of typting for routine file managment
 alias	dotf="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
 		dota="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add" \
-		dots="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status" \
+		dots="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno" \
 		dotc="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S" \
 		dotcm="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S -m" \
 		dotb="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch" \
@@ -57,9 +59,6 @@ function delswp() { rm ~/.local/share/nvim/swap/*; }
 
 # Add the GNUv3.0 License to the current directory
 license() { curl https://samerickson.me/files/LICENSE-GNU3 > LICENSE; }
-
-# Backup script for when I have my backup usb connected
-bckup() { rsync -av --delete --exclude-from $HOME/.config/backup-exclude-list.txt / /mnt/backups/$(date +%Y-%m-%d_%H:%m); }
 
 # Search bash history
 hist() { history | grep $@; }

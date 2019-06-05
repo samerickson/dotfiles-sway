@@ -11,3 +11,4 @@ application/rss+xml=rss.desktop
 
 [Added Associations]
 text/x-sh=org.gnome.gedit.desktop;
+inode/directory=eog.desktop;

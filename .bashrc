@@ -3,7 +3,7 @@
 [[ $- != *i* ]] && return
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
-PATH="$PATH:$HOME/.bin"
+PATH="$PATH:$HOME/.local/share/bin:$HOME/.local/private/bin"
 
 export EDITOR="nvim"
 export TERM="termite"

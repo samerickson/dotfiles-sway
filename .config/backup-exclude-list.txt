@@ -4,3 +4,4 @@
 /mnt
 /sys
 /sbin
+/.config/virtualbox
