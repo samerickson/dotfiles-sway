@@ -1,14 +1,18 @@
 [Default Applications]
-x-scheme-handler/magnet=torrent.desktop;
-x-scheme-handler/mailto=mail.desktop;
+application/pdf=pdf.desktop;
+application/rss+xml=rss.desktop;
+image/gif=img.desktop;
+image/jpeg=img.desktop;
+image/png=img.desktop;
 text/plain=text.desktop;
 text/x-shellscript=text.desktop;
-application/pdf=pdf.desktop;
-image/png=img.desktop;
-image/jpeg=img.desktop;
-image/gif=img.desktop;
-application/rss+xml=rss.desktop
-
+x-scheme-handler/magnet=torrent.desktop;
+x-scheme-handler/mailto=mail.desktop;
 [Added Associations]
-text/x-sh=org.gnome.gedit.desktop;
+image/gif=eog.desktop;
+image/jpeg=eog.desktop;
+image/jpg=eog.desktop;
+image/png=eog.desktop;
 inode/directory=eog.desktop;
+text/x-sh=org.gnome.gedit.desktop;
+
