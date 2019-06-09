@@ -51,6 +51,10 @@ alias	gc="git commit -S -m" \
 		gs="git status" \
 		ga="git add"
 
+# These ones are here just for fun
+alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+
+
 # FUNCTIONS:
 # ==========
 
