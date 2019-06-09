@@ -29,7 +29,7 @@ exec swayidle -w \
 set $mod Mod4
 set $term termite
 set $browser env GDK_BACKEND=wayland firefox
-set $file nautilus
+set $file pcmanfm
 set $menu "rofi -show run"
 
 input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
