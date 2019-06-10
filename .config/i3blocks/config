@@ -14,7 +14,7 @@ command=~/.config/i3blocks/scripts/disk.sh /home
 
 [clock]
 interval=15
-command=date +%A,\ %b\ %d\ %H:%m
+command=date +%A,\ %b\ %d\ %H:%M
 
 [battery]
 label=🔋
