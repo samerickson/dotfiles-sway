@@ -19,7 +19,8 @@ alias	b="cs ~/.local/share/bin" \
 		s="cs ~/Github/samerickson.me" \
 		g="cs ~/Github" \
 		p="cs ~/.local/private" \
-		t="cs ~/Downloads/transmission"
+		t="cs ~/Downloads/transmission" \
+		m="cs ~/.local/share/misc-files"
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR ~/.bashrc" \
