@@ -2,6 +2,10 @@
 
 markup=pango
 
+[recording]
+interval=3
+command=~/.local/share/bin/screencast.sh status
+
 [disk-usage-root]
 interval=60
 label=/:
