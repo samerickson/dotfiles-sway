@@ -1,0 +1,7 @@
+/dev
+/proc
+/tmp
+/mnt
+/sys
+/sbin
+/.config/virtualbox
