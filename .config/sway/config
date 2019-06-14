@@ -19,18 +19,18 @@ bar {
 exec mako
 
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 3f6375' \
-	timeout 330 'swaymsg "output * dpms off"' \
+    timeout 600 'swaylock -f -c 3f6375' \
+	timeout 630 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
 	before-sleep 'swaylock -f -c 3f6375'
 
 # Variables
 # =========
-set $mod Mod4
-set $term termite
-set $browser env GDK_BACKEND=wayland firefox
-set $file pcmanfm
-set $menu "rofi -show run"
+set $mod		Mod4
+set $term		termite
+set $browser	env GDK_BACKEND=wayland firefox
+set $file		pcmanfm
+set $menu		"rofi -show run"
 
 input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
@@ -54,6 +54,7 @@ for_window [app_id="^.*"] border pixel 2
 for_window [app_id="^.*_floating"] floating enable
 for_window [app_id="Firefox"] inhibit_idle fullscreen
 for_window [app_id="firefox"] inhibit_idle fullscreen
+for_window [app_id="zenity"] floating enable
 
 # Add gaps between the windows [note this applies to new windows]
 gaps inner 8
@@ -72,20 +73,20 @@ floating_modifier $mod normal
 # KEYBINDINGS
 # ===========
 	# start a terminal
-	bindsym $mod+Return exec $term
-	
+	bindsym $mod+Return		exec $term
+
 	# spawn a floating terminal
 	bindsym $mod+Shift+Return exec ~/.local/share/bin/floating-term.sh
 
 	# Start web browser
-	bindsym $mod+w		exec $browser
+	bindsym $mod+w			exec $browser
 
 	# Start file manager
 	bindsym $mod+f			exec $file
 
 	# Start screen recording / stop screen recording
-	bindsym $mod+z			exec ~/.local/share/bin/screencast.sh
-	bindsym $mod+shift+z	exec kill -2 $(pidof wf-recorder)
+	bindsym $mod+z			exec ~/.local/share/bin/screencast.sh start
+	bindsym $mod+shift+z	exec ~/.local/share/bin/screencast.sh stop
 
 	# kill focused window
 	bindsym $mod+Shift+q 	kill
@@ -100,25 +101,25 @@ floating_modifier $mod normal
 	bindsym $mod+shift+w	exec ~/.local/share/bin/floating-term.sh nmtui
 
 	# reload the configuration file
-	bindsym $mod+Shift+c reload
+	bindsym $mod+Shift+c	reload
 
 	# exit sway (logs you out of your Wayland session)
-	bindsym $mod+Shift+e exec swaynag -t warning -m "Exit sway?" -b "YES" "swaymsg exit"
+	bindsym $mod+Shift+e	exec zenity --question --text "Are you sure you wish to exit sway?" && swaymsg exit
 
 # Function Keys:
 # ==============
-	#bindsym F1				
-	bindsym F2				exec swaylock -f -c 62feff && 
-	#bindsym F3
-	bindsym F4				exec suspend
-	#bindsym F5
-	#bindsym F6
-	#bindsym F7
-	#bindsym F8
-	#bindsym F9
-	#bindsym F10
-#	bindsym F11	 Full screen toggle	
-	#bindsym F12
+#	bindsym F1
+#	bindsym F2
+#	bindsym F3
+#	bindsym F4
+#	bindsym F5
+#	bindsym F6
+#	bindsym F7
+#	bindsym F8
+#	bindsym F9
+#	bindsym F10
+#	bindsym F11
+#	bindsym F12
 
 # Moving around:
 # ==============
@@ -224,9 +225,7 @@ bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
 bindsym XF86AudioMute			exec ~/.local/share/bin/audio.sh mute 
 bindsym XF86AudioRaiseVolume 	exec ~/.local/share/bin/audio.sh add
 bindsym XF86AudioLowerVolume 	exec ~/.local/share/bin/audio.sh sub
-bindsym XF86PowerOff 		exec swaynag -t warning -m 'Are you sure you want to power machine off?' -b "Yes, shutdown now" 'shutdown now'
-
-
+#bindsym XF86PowerOff			exec 
 #bindsym XF86AudioNext			exec
 #bindsym XF86AudioPlay			exec
 #bindsym XF86AudioPrev			exec
