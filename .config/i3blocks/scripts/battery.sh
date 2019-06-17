@@ -7,19 +7,21 @@
 #		BATTERY LEVEL < 20% -- OUTPUT COLOR YELLOW
 #		BATTERY LEVEL < 10% -- OUTPUT COLOR RED
 
+source ~/.config/i3blocks/scripts/colors.sh
+
 max_charge=$(cat /sys/class/power_supply/BAT0/charge_full)
 current_charge=$(cat /sys/class/power_supply/BAT0/charge_now)
 current="$(echo "scale=2;$current_charge/$max_charge" | bc | sed 's/\.//g')"
 
 if [[ "$current" -lt 20 ]]; then
-	color="#ffd072"
+	color="$yellow"
 elif [[ "$current" -lt 10 ]]; then
-	color="#f26d6d"
+	color="$red"
 elif [[ "$current" -gt 80 ]]; then
-	color="#91e78b"
+	color="$lime"
 else
-	color="#ffffff"
+	color="$white"
 fi 
 
-printf "<span color='%s'>%s</span>" "$color" "$current%"
+printf "<span color='%s'>BATTERY:</span><span color='%s'>%s</span>" "$yellow" "$color" "$current%"
 
