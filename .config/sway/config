@@ -8,16 +8,20 @@ bar {
 	font Inconsolata Nerd Font
 	colors {
 		statusline #ffffff
-		background #00000055
-		focused_workspace	#62feff88 #62feff88 #ffffffff
-		active_workspace	#215959aa #215959aa #ffffff88
-		inactive_workspace	#215959aa #215959aa #ffffff88
+		background #000000
+		focused_workspace	#000000 #000000 #00ff00
+		inactive_workspace	#000000 #000000 #ffff00
+		active_workspace	#000000 #000000 #ffff00
 	}
 }
 
 # Start notification daemon
 exec mako
 
+# Clipboard manager
+exec clipman -d
+
+# Shutdown displays when idle
 exec swayidle -w \
     timeout 600 'swaylock -f -c 3f6375' \
 	timeout 630 'swaymsg "output * dpms off"' \
@@ -83,6 +87,9 @@ floating_modifier $mod normal
 
 	# Start file manager
 	bindsym $mod+f			exec $file
+
+	# Clipboard manager
+	bindsym $mod+c			exec clipman -s --selector="rofi"
 
 	# Start screen recording / stop screen recording
 	bindsym $mod+z			exec ~/.local/share/bin/screencast.sh start
