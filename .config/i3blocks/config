@@ -19,18 +19,18 @@ command=~/.config/i3blocks/scripts/disk.sh /
 interval=60
 command=~/.config/i3blocks/scripts/disk.sh /home
 
-[clock]
-interval=15
-command=~/.config/i3blocks/scripts/date.sh
+[volume]
+interval=once
+command=~/.config/i3blocks/scripts/volume.sh
+signal=10
 
 [battery]
 interval=30
 command=~/.config/i3blocks/scripts/battery.sh
 
-[volume]
-interval=once
-command=~/.config/i3blocks/scripts/volume.sh
-signal=10
+[clock]
+interval=1
+command=~/.config/i3blocks/scripts/date.sh
 
 [network]
 interval=15

@@ -5,12 +5,16 @@
 
 PATH="$PATH:$HOME/.local/share/bin:$HOME/.local/private/bin"
 
+# Default applications
 export EDITOR="nvim"
 export TERM="termite"
 export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="nautilus"
+
+# Default colors
+source "$HOME/.config/colorsrc"
 
 # Set bash prompt [simple and clean]
 PS1='$ '
@@ -21,5 +25,5 @@ export GPG_TTY=$(tty)
 # If running from tty1 start sway
 [ "$(tty)" = "/dev/tty1" ]&& exec sway
 
-[ -r ~/.config/aliasrc ] && . ~/.config/aliasrc
+[ -r "$HOME/.config/aliasrc" ] && . "$HOME/.config/aliasrc"
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
