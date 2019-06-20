@@ -1,5 +1,9 @@
 let mapleader =","
 
+call plug#begin('~/.config/nvim/plugins')
+	Plug 'vimwiki/vimwiki'
+call plug#end()
+
 " Some basics:
 	set nocompatible
 	set nohlsearch
