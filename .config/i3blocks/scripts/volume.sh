@@ -2,7 +2,7 @@
 
 # This script allowes i3blocks to indicate the current set audio levels, and mute status.
 
-source $HOME/.config/i3blocks/scripts/colors.sh
+. ~/.config/colorsrc
 
 # Check if muted
 [ $(pulsemixer --get-mute) -eq "1" ] && volume=0 || \	

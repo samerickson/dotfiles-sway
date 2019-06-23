@@ -6,7 +6,7 @@
 #		RED = NO INTERNET CONNECTION
 #		GREEN = INTERNET CONNECTION
 
-source "$HOME"/.config/i3blocks/scripts/colors.sh
+. ~/.config/colorsrc
 
 # Check for internet connection
 if [ $(cat /sys/class/net/ens*/operstate) == "up" ] || \

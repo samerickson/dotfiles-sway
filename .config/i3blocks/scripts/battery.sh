@@ -7,7 +7,7 @@
 #		BATTERY LEVEL < 20% -- OUTPUT COLOR YELLOW
 #		BATTERY LEVEL < 10% -- OUTPUT COLOR RED
 
-source ~/.config/i3blocks/scripts/colors.sh
+. ~/.config/colorsrc
 
 max_charge=$(cat /sys/class/power_supply/BAT0/charge_full)
 current_charge=$(cat /sys/class/power_supply/BAT0/charge_now)
