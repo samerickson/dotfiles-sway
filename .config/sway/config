@@ -34,7 +34,7 @@ set $mod		Mod4
 set $term		termite
 set $browser	env GDK_BACKEND=wayland firefox
 set $file		pcmanfm
-set $menu		"rofi -show run"
+set $menu		dmenu_run
 
 input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
@@ -80,7 +80,7 @@ floating_modifier $mod normal
 	bindsym $mod+Return		exec $term
 
 	# spawn a floating terminal
-	bindsym $mod+Shift+Return exec ~/.local/share/bin/floating-term.sh
+	bindsym $mod+Shift+Return exec ~/.local/bin/floating-term.sh
 
 	# Start web browser
 	bindsym $mod+w			exec $browser
@@ -92,8 +92,8 @@ floating_modifier $mod normal
 	bindsym $mod+c			exec clipman -s --selector="rofi"
 
 	# Start screen recording / stop screen recording
-	bindsym $mod+z			exec ~/.local/share/bin/screencast.sh start
-	bindsym $mod+shift+z	exec ~/.local/share/bin/screencast.sh stop
+	bindsym $mod+z			exec ~/.local/bin/screencast.sh start
+	bindsym $mod+shift+z	exec ~/.local/bin/screencast.sh stop
 
 	# kill focused window
 	bindsym $mod+Shift+q 	kill
@@ -102,10 +102,10 @@ floating_modifier $mod normal
 	bindsym $mod+d 			exec $menu
 
 	# Take screen shot
-	bindsym --release $mod+p exec ~/.local/share/bin/screenshot
+	bindsym --release $mod+p exec ~/.local/bin/screenshot
 
 	# Open network manager / current manager does not work with enterprise wifi
-	bindsym $mod+shift+w	exec ~/.local/share/bin/floating-term.sh nmtui
+	bindsym $mod+shift+w	exec ~/.local/bin/floating-term.sh nmtui
 
 	# reload the configuration file
 	bindsym $mod+Shift+c	reload
@@ -229,9 +229,9 @@ bindsym $mod+r mode "resize"
 # Multi-media keys:
 # =================
 bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
-bindsym XF86AudioMute			exec ~/.local/share/bin/audio.sh mute 
-bindsym XF86AudioRaiseVolume 	exec ~/.local/share/bin/audio.sh add
-bindsym XF86AudioLowerVolume 	exec ~/.local/share/bin/audio.sh sub
+bindsym XF86AudioMute			exec ~/.local/bin/audio.sh mute 
+bindsym XF86AudioRaiseVolume 	exec ~/.local/bin/audio.sh add
+bindsym XF86AudioLowerVolume 	exec ~/.local/bin/audio.sh sub
 #bindsym XF86PowerOff			exec 
 #bindsym XF86AudioNext			exec
 #bindsym XF86AudioPlay			exec

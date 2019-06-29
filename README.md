@@ -8,6 +8,7 @@ My current dotfiles to recreate my development environment.
 Dependencies
 ------------
 ```
+dmenu
 grim
 mako
 sway
