@@ -3,7 +3,7 @@
 [[ $- != *i* ]] && return
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
-PATH="$PATH:$HOME/.local/share/bin:$HOME/.local/private/bin"
+PATH="$PATH:$HOME/.local/bin:$HOME/.local/private/bin"
 
 # Default applications
 export EDITOR="nvim"
