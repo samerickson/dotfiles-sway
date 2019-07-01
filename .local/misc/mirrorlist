@@ -1,0 +1,18 @@
+##
+## Arch Linux repository mirrorlist
+## Generated on 2019-06-11
+##
+
+## Canada
+Server = http://mirror.cedille.club/archlinux/$repo/os/$arch
+Server = http://archlinux.mirror.colo-serv.net/$repo/os/$arch
+Server = http://mirror.csclub.uwaterloo.ca/archlinux/$repo/os/$arch
+Server = https://mirror.csclub.uwaterloo.ca/archlinux/$repo/os/$arch
+Server = http://mirror.its.dal.ca/archlinux/$repo/os/$arch
+Server = http://muug.ca/mirror/archlinux/$repo/os/$arch
+Server = https://muug.ca/mirror/archlinux/$repo/os/$arch
+Server = http://archlinux.olanfa.rocks/$repo/os/$arch
+Server = https://archlinux.olanfa.rocks/$repo/os/$arch
+Server = http://archlinux.mirror.rafal.ca/$repo/os/$arch
+Server = http://mirror.sergal.org/archlinux/$repo/os/$arch
+Server = https://mirror.sergal.org/archlinux/$repo/os/$arch
