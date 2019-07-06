@@ -1,8 +1,8 @@
 # vim:syntax=sh
 # File: ~/.config/aliasrc
 
-# Map vi and vim to neovim
-alias	vim="nvim" vi="nvim"
+# Application remapping
+alias	vim="nvim" vi="nvim" aftershot="AfterShot3X64"
 
 # System commands
 alias	mx="chmod a+x"
@@ -11,7 +11,7 @@ alias	mx="chmod a+x"
 alias	src="source ~/.bashrc; echo 'reloaded .bashrc'"
 
 # Directories
-alias	b="cs ~/.local/share/bin" \
+alias	b="cs ~/.local/bin" \
 		cf="cs ~/.config" \
 		D="cs ~/Documents" \
 		d="cs ~/Downloads" \
@@ -20,14 +20,16 @@ alias	b="cs ~/.local/share/bin" \
 		g="cs ~/Github" \
 		p="cs ~/.local/private" \
 		t="cs ~/Downloads/transmission" \
-		m="cs ~/.local/share/misc-files"
+		T="cs ~/.local/tap" \
+		m="cs ~/.local/misc-files"
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR ~/.bashrc" \
 		cfp="$EDITOR ~/.profile" \
 		cfv="$EDITOR ~/.config/nvim/init.vim" \
 		cfs="$EDITOR ~/.config/sway/config" \
-		cfa="$EDITOR ~/.config/aliasrc"
+		cfa="$EDITOR ~/.config/aliasrc" \
+		cfi="$EDITOR ~/.config/i3/config"
 
 # Aliases for saving a few key presses off ls commands
 alias 	ls="ls --color=auto" \

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script starts a screencast
-DISPLAY="$(~/.local/share/bin/select_focused.sh)"
+DISPLAY="$(~/.local/bin/select_focused.sh)"
 
 [ "$#" -ne 1 ] && printf "Expected an argument.\n"
 

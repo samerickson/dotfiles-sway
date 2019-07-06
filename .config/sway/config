@@ -53,11 +53,14 @@ input 2821:6170:ASUS_ROG_GLADIUS {
 }
 
 # Window specific settings
-for_window [class="^.*"] border pixel 2
-for_window [app_id="^.*"] border pixel 2
+client.focused		#00ff00 #000000 #ffffff #ff00ff #00ff00
+client.unfocused	#ffff00 #000000 #ffffff #000000 #ffff00
+for_window [class="^.*"] border pixel 1
+for_window [app_id="^.*"] border pixel 1
 for_window [app_id="^.*_floating"] floating enable
 for_window [app_id="Firefox"] inhibit_idle fullscreen
 for_window [app_id="firefox"] inhibit_idle fullscreen
+for_window [app_id="mpv"] inhibit_idle
 for_window [app_id="zenity"] floating enable
 
 # Add gaps between the windows [note this applies to new windows]
@@ -89,7 +92,7 @@ floating_modifier $mod normal
 	bindsym $mod+f			exec $file
 
 	# Clipboard manager
-	bindsym $mod+c			exec clipman -s --selector="rofi"
+	bindsym $mod+c			exec clipman -s --selector="dmenu"
 
 	# Start screen recording / stop screen recording
 	bindsym $mod+z			exec ~/.local/bin/screencast.sh start
