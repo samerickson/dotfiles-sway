@@ -2,7 +2,9 @@
 # File: ~/.config/aliasrc
 
 # Application remapping
-alias	vim="nvim" vi="nvim" aftershot="AfterShot3X64"
+alias	vim="nvim" vi="nvim" \
+		aftershot="AfterShot3X64" \
+		mpv="mpv --gpu-context=wayland"
 
 # System commands
 alias	mx="chmod a+x"
@@ -19,6 +21,7 @@ alias	b="cs ~/.local/bin" \
 		s="cs ~/Github/samerickson.me" \
 		g="cs ~/Github" \
 		p="cs ~/.local/private" \
+		P="cs ~/Pictures" \
 		t="cs ~/Downloads/transmission" \
 		T="cs ~/.local/tap" \
 		m="cs ~/.local/misc-files"

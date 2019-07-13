@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 # This script takes a screen shot of the current active window
-focused=$(~/.local/share/bin/select_focused.sh)
-grim -o $focused ~/Pictures/$(date +%Y-%m-%d%h%m%s).png && \
-	notify-send "Captured screenshot of $focused"
+focused="$(~/.local/bin/select_focused.sh)"
+location="$HOME/Pictures/screenshots"
+[ ! -d "$location" ] && mkdir "$location"
+grim -o "$focused" "$location/$(date +%Y-%m-%d_%h:%M:%S).png" && \
+	notify-send -t 1500 "Captured screenshot of $focused, stored in $location"

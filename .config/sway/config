@@ -19,10 +19,10 @@ bar {
 exec mako
 
 # Clipboard manager
-exec clipman -d
+# exec clipman -d
 
 # Shutdown displays when idle
-exec swayidle -w \
+exec_always swayidle -w \
     timeout 600 'swaylock -f -c 3f6375' \
 	timeout 630 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
@@ -91,12 +91,17 @@ floating_modifier $mod normal
 	# Start file manager
 	bindsym $mod+f			exec $file
 
+	bindsym $mod+p			exec --release screenshot
+
 	# Clipboard manager
 	bindsym $mod+c			exec clipman -s --selector="dmenu"
 
 	# Start screen recording / stop screen recording
 	bindsym $mod+z			exec ~/.local/bin/screencast.sh start
 	bindsym $mod+shift+z	exec ~/.local/bin/screencast.sh stop
+
+	# Open webcam in mpv
+	bindsym $mod+m			exec mpv /dev/video0
 
 	# kill focused window
 	bindsym $mod+Shift+q 	kill
@@ -115,21 +120,6 @@ floating_modifier $mod normal
 
 	# exit sway (logs you out of your Wayland session)
 	bindsym $mod+Shift+e	exec zenity --question --text "Are you sure you wish to exit sway?" && swaymsg exit
-
-# Function Keys:
-# ==============
-#	bindsym F1
-#	bindsym F2
-#	bindsym F3
-#	bindsym F4
-#	bindsym F5
-#	bindsym F6
-#	bindsym F7
-#	bindsym F8
-#	bindsym F9
-#	bindsym F10
-#	bindsym F11
-#	bindsym F12
 
 # Moving around:
 # ==============

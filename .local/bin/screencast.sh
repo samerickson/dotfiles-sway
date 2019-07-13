@@ -17,7 +17,7 @@ rec-start() {
 		notify-send -t 1500 "Error: screencast already running" && exit 1
 	
 	notify-send -t 1500 "Starting screencast on $DISPLAY"
-	wf-recorder -o "$DISPLAY" -f "$HOME/Videos/screencast-$(date +%Y%m%d%h%m).mp4"
+	wf-recorder -a -o "$DISPLAY" -f "$HOME/Videos/screencast-$(date +%Y-%m-%d_%h:%M).mp4"
 }
 
 rec-stop() {
