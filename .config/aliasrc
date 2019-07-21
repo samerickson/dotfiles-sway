@@ -14,17 +14,19 @@ alias	src="source ~/.bashrc; echo 'reloaded .bashrc'"
 
 # Directories
 alias	b="cs ~/.local/bin" \
+		m="cs ~/.local/misc" \
 		cf="cs ~/.config" \
 		D="cs ~/Documents" \
 		d="cs ~/Downloads" \
 		h="cs ~" \
+		l="cs ~/.local" \
 		s="cs ~/Github/samerickson.me" \
 		g="cs ~/Github" \
 		p="cs ~/.local/private" \
 		P="cs ~/Pictures" \
 		t="cs ~/Downloads/transmission" \
 		T="cs ~/.local/tap" \
-		m="cs ~/.local/misc-files"
+		i="cs ~/.local/share/icons/default"
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR ~/.bashrc" \
