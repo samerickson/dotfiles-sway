@@ -16,17 +16,24 @@ bar {
 }
 
 # Start notification daemon
-exec mako
+exec mako --max-visible 10 --width 350 --border-color=#00ff00 --background-color=#000000 --default-timeout 6000
 
 # Clipboard manager
 # exec clipman -d
 
 # Shutdown displays when idle
 exec_always swayidle -w \
-    timeout 600 'swaylock -f -c 3f6375' \
-	timeout 630 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
+	timeout 600 'swaymsg "output * dpms off"' \
+    timeout 630 'swaylock -f -c 3f6375' \
+    resume 'swaymsg "output * dpms on"; pkill -nx swayidle' \
 	before-sleep 'swaylock -f -c 3f6375'
+
+# For use with keybindings, force lock
+set $sleep swayidle -w \
+    timeout 1 'swaymsg "output * dpms off"' \
+    timeout 2 'swaylock -f -c 3f6375' \
+    resume 'swaymsg "output * dpms on"; pkill -nx swayidle' \
+    before-sleep 'swaylock -f -c 3f6375'
 
 # Variables
 # =========
@@ -101,7 +108,7 @@ floating_modifier $mod normal
 	bindsym $mod+shift+z	exec ~/.local/bin/screencast.sh stop
 
 	# Open webcam in mpv
-	bindsym $mod+m			exec mpv /dev/video0
+	bindsym $mod+m			exec ~/.local/bin/open-web-cam.sh
 
 	# kill focused window
 	bindsym $mod+Shift+q 	kill
