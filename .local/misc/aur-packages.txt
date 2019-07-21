@@ -1,5 +1,0 @@
-matcha-gtk-theme
-matcha-icon-theme
-broadcom-wl
-cups
-hugo
