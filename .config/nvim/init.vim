@@ -19,6 +19,10 @@ call plug#end()
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Wrap text to 80 characters to keep my grades up at school
+	autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Personal shortcuts
 	nnoremap <leader>s :set spell!<CR>
 	nnoremap <leader>l :set list!<CR>
 	nnoremap S :%s//g<Left><Left>
