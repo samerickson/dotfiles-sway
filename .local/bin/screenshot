@@ -5,4 +5,5 @@ focused="$(~/.local/bin/select_focused.sh)"
 location="$HOME/Pictures/screenshots"
 [ ! -d "$location" ] && mkdir "$location"
 grim -o "$focused" "$location/$(date +%Y-%m-%d_%h:%M:%S).png" && \
-	notify-send -t 1500 "Captured screenshot of $focused, stored in $location"
+	notify-send -i ~/.local/share/icons/default/32x32/devices/camera-photo-white.png \
+	"Captured screenshot of $focused, stored in $location"
