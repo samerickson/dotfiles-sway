@@ -6,8 +6,15 @@ image/jpeg=img.desktop;
 image/png=img.desktop;
 text/plain=text.desktop;
 text/x-shellscript=text.desktop;
+x-scheme-handler/http=firefox.desktop
 x-scheme-handler/magnet=torrent.desktop;
 x-scheme-handler/mailto=mail.desktop;
+text/html=firefox.desktop
+text/xml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+application/x-xpinstall=firefox.desktop
+
 [Added Associations]
 image/gif=eog.desktop;
 image/jpeg=eog.desktop;
@@ -15,4 +22,8 @@ image/jpg=eog.desktop;
 image/png=eog.desktop;
 inode/directory=eog.desktop;
 text/x-sh=org.gnome.gedit.desktop;
-
+text/html=firefox.desktop;
+text/xml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+application/x-xpinstall=firefox.desktop;
