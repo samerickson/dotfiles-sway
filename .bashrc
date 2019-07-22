@@ -10,7 +10,7 @@ PATH="$PATH:$HOME/.local/bin:$HOME/.local/private/bin:$GOPATH/bin"
 export EDITOR="nvim"
 export TERM="termite"
 export VISUAL="$EDITOR"
-export BROWSER="firefox"
+export BROWSER="chromium"
 export READER="zathura"
 export FILE="nautilus"
 

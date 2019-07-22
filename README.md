@@ -66,7 +66,7 @@ wf-recorder
 zathura-djvu
 zathura-prd-poppler
 alsa-utils
-firefox
+chromium
 i3blocks
 jq
 slurp
@@ -74,6 +74,23 @@ swayidle
 swaylock
 termite
 ```
+
+Issues
+------
+**firefox:**
+`Firefox` has way to many issues, for example below is an image of how firefox's
+window sizing on startup is broken. 
+![image of firefox window issues](images/firefox.png)
+Links related to the issue:
+
+* https://www.reddit.com/r/firefox/comments/624pjf/tiling_window_managersfirefox_screen_messed_up/
+* https://github.com/xmonad/xmonad/issues/144
+* https://bugzilla.mozilla.org/show_bug.cgi?id=686747
+
+`Firefox` also produces sesuire inducing visuals while trying to resize. As much
+as I would like to use `firefox` its just too broken for me to justify it. Even
+though `chromium` does not officially support `wayland`, it still appears to be the
+better option, as lots of other apps used are ran using `xwayland` anyway.
 
 Wacom drawing tablets
 ---------------------

@@ -5,7 +5,7 @@
 # =========
 set $mod		Mod4
 set $term		termite
-set $browser	env GDK_BACKEND=wayland firefox
+set $browser	chromium
 set $file		pcmanfm
 set $menu		dmenu_run
 set $sleep swayidle -w \
