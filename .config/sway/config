@@ -1,39 +1,5 @@
-# ~/.config/sway/config
-
-# Startup Programs:
-# =================
-bar {
-	position bottom
-	status_command i3blocks
-	font Inconsolata Nerd Font
-	colors {
-		statusline #ffffff
-		background #000000
-		focused_workspace	#000000 #000000 #00ff00
-		inactive_workspace	#000000 #000000 #ffff00
-		active_workspace	#000000 #000000 #ffff00
-	}
-}
-
-# Start notification daemon
-exec mako --max-visible 10 --width 350 --border-color=#00ff00 --background-color=#000000 --default-timeout 6000
-
-# Clipboard manager
-# exec clipman -d
-
-# Shutdown displays when idle
-exec_always swayidle -w \
-	timeout 600 'swaymsg "output * dpms off"' \
-    timeout 630 'swaylock -f -c 3f6375' \
-    resume 'swaymsg "output * dpms on"; pkill -nx swayidle' \
-	before-sleep 'swaylock -f -c 3f6375'
-
-# For use with keybindings, force lock
-set $sleep swayidle -w \
-    timeout 1 'swaymsg "output * dpms off"' \
-    timeout 2 'swaylock -f -c 3f6375' \
-    resume 'swaymsg "output * dpms on"; pkill -nx swayidle' \
-    before-sleep 'swaylock -f -c 3f6375'
+# File: ~/.config/sway/config
+# Author: Sam Erickson | samerickson.ca
 
 # Variables
 # =========
@@ -42,91 +8,86 @@ set $term		termite
 set $browser	env GDK_BACKEND=wayland firefox
 set $file		pcmanfm
 set $menu		dmenu_run
+set $sleep swayidle -w \
+    timeout 1 'swaymsg "output * dpms off"' \
+    timeout 2 'swaylock -f -c 3f6375' \
+    resume 'swaymsg "output * dpms on"; pkill -nx swayidle' \
+    before-sleep 'swaylock -f -c 3f6375'
 
-input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
-	xkb_options caps:escape
-	repeat_delay 200
-	repeat_rate 25
-}
-input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
-	xkb_options caps:escape
-	repeat_delay 250
-	repeat_rate 25
-}
+# Startup Programs:
+# =================
+exec mako --max-visible 10 --width 350 --border-color=#00ff00 --background-color=#000000 --default-timeout 6000
+exec clipman -d
 
-input 2821:6170:ASUS_ROG_GLADIUS {
-	scroll_factor 2
-	natural_scroll enabled
-}
+# Shutdown displays when idle
+exec_always swayidle -w \
+	timeout 600 'swaymsg "output * dpms off"' \
+    timeout 630 'swaylock -f -c 3f6375' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 3f6375'
+
+# KEYBINDINGS
+# ===========
+
+	# Window management:
+	#------------------
+	bindsym $mod+o				exec ~/.local/bin/swayresize.sh left
+	bindsym $mod+i				exec ~/.local/bin/swayresize.sh down
+	bindsym $mod+u				exec ~/.local/bin/swayresize.sh up
+	bindsym $mod+y				exec ~/.local/bin/swayresize.sh right
+	bindsym $mod+Shift+q		kill
+	bindsym $mod+Shift+s		layout stacking
+	bindsym $mod+Shift+t		layout tabbed
+	bindsym $mod+e				layout toggle split
+	bindsym $mod+b				splith
+	bindsym $mod+v				splitv
+	bindsym $mod+shift+f		fullscreen
+	bindsym $mod+space			floating toggle
+	bindsym $mod+shift+space	focus mode_toggle
+	bindsym $mod+Shift+minus	move scratchpad
+	bindsym $mod+minus			scratchpad show
+	
+	# Starting apllications:
+	# ----------------------
+	bindsym $mod+Return			exec $term
+	bindsym $mod+Shift+Return	exec ~/.local/bin/floating-term.sh
+	bindsym $mod+a				exec $term -e bc
+	bindsym $mod+w				exec $browser
+	bindsym $mod+f				exec $file
+	bindsym $mod+p				exec --release screenshot
+	bindsym $mod+c				exec clipman -s --selector="dmenu"
+	bindsym $mod+z				exec ~/.local/bin/screencast.sh start
+	bindsym $mod+shift+z		exec ~/.local/bin/screencast.sh stop
+	bindsym $mod+m				exec ~/.local/bin/open-web-cam.sh
+	bindsym $mod+d				exec $menu
+	bindsym $mod+shift+w		exec ~/.local/bin/floating-term.sh nmtui
+	
+	# System managment:
+	# -----------------
+	bindsym $mod+Shift+c		reload
+	bindsym $mod+s				exec $sleep
+	bindsym $mod+Shift+e		exec zenity --question --text \
+									"Are you sure you wish to exit sway?" && \
+									swaymsg exit
 
 # Window specific settings
-client.focused		#00ff00 #000000 #ffffff #ff00ff #00ff00
-client.unfocused	#ffff00 #000000 #ffffff #000000 #ffff00
-for_window [class="^.*"] border pixel 1
-for_window [app_id="^.*"] border pixel 1
-for_window [app_id="^.*_floating"] floating enable
-for_window [app_id="Firefox"] inhibit_idle fullscreen
-for_window [app_id="firefox"] inhibit_idle fullscreen
-for_window [app_id="mpv"] inhibit_idle
-for_window [app_id="zenity"] floating enable
+client.focused						#00ff00 #000000 #ffffff #ff00ff #00ff00
+client.unfocused					#ffff00 #000000 #ffffff #000000 #ffff00
+for_window [class="^.*"]			border pixel 1
+for_window [app_id="^.*"]			border pixel 1
+for_window [app_id="^.*_floating"]	floating enable
+for_window [app_id="Firefox"]		inhibit_idle fullscreen
+for_window [app_id="firefox"]		inhibit_idle fullscreen
+for_window [app_id="mpv"]			inhibit_idle
+for_window [app_id="zenity"]		floating enable
 
-# Add gaps between the windows [note this applies to new windows]
 gaps inner 8
-
-# Set wallpaper
 output * bg ~/.config/wallpaper.* fill
+floating_modifier $mod normal
 
 # Set pixel density scaling
 output eDP-1 pos 1920 0 scale 2 res 2880x1800
 output HDMI-A-3 pos 0 0 res 1920x1080
-
-# This makes it so that holding down mod allows you to change the location of
-#	windows using the mouse.
-floating_modifier $mod normal
-
-# KEYBINDINGS
-# ===========
-	# start a terminal
-	bindsym $mod+Return		exec $term
-
-	# spawn a floating terminal
-	bindsym $mod+Shift+Return exec ~/.local/bin/floating-term.sh
-
-	# Start web browser
-	bindsym $mod+w			exec $browser
-
-	# Start file manager
-	bindsym $mod+f			exec $file
-
-	bindsym $mod+p			exec --release screenshot
-
-	# Clipboard manager
-	bindsym $mod+c			exec clipman -s --selector="dmenu"
-
-	# Start screen recording / stop screen recording
-	bindsym $mod+z			exec ~/.local/bin/screencast.sh start
-	bindsym $mod+shift+z	exec ~/.local/bin/screencast.sh stop
-
-	# Open webcam in mpv
-	bindsym $mod+m			exec ~/.local/bin/open-web-cam.sh
-
-	# kill focused window
-	bindsym $mod+Shift+q 	kill
-
-	# start your launcher
-	bindsym $mod+d 			exec $menu
-
-	# Take screen shot
-	bindsym --release $mod+p exec ~/.local/bin/screenshot
-
-	# Open network manager / current manager does not work with enterprise wifi
-	bindsym $mod+shift+w	exec ~/.local/bin/floating-term.sh nmtui
-
-	# reload the configuration file
-	bindsym $mod+Shift+c	reload
-
-	# exit sway (logs you out of your Wayland session)
-	bindsym $mod+Shift+e	exec zenity --question --text "Are you sure you wish to exit sway?" && swaymsg exit
 
 # Moving around:
 # ==============
@@ -176,56 +137,6 @@ floating_modifier $mod normal
 	bindsym $mod+Shift+9 move container to workspace 9
 	bindsym $mod+Shift+0 move container to workspace 10
 
-# Layouts:
-# ========
-	# Change the layout of the current workspace
-	bindsym $mod+s layout stacking
-	bindsym $mod+t layout tabbed
-	bindsym $mod+e layout toggle split
-
-	# You can "split" the current object of your focus with
-	# $mod+b or $mod+v, for horizontal and vertical splits
-	# respectively.
-	bindsym $mod+b splith
-	bindsym $mod+v splitv
-
-	# Make the current window fullscreen
-	bindsym $mod+shift+f fullscreen
-
-	# Toggle the current focus between tiling and floating mode
-	bindsym $mod+space floating toggle
-
-	# Swap focus between the tiling area and the floating area
-	bindsym $mod+shift+space focus mode_toggle
-
-	# Open a calculator
-	bindsym $mod+a exec $term -e bc
-
-# Scratchpad:
-# ===========
-	# Move the currently focused window to the scratchpad
-	bindsym $mod+Shift+minus move scratchpad
-
-	# View windows in scratchpad
-	bindsym $mod+minus scratchpad show
-
-mode "resize" {
-	bindsym h resize shrink width 10px
-	bindsym j resize grow height 10px
-	bindsym k resize shrink height 10px
-	bindsym l resize grow width 10px
-
-	bindsym Left resize shrink width 10px
-	bindsym Down resize grow height 10px
-	bindsym Up resize shrink height 10px
-	bindsym Right resize grow width 10px
-
-	# return to defhult mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
 # Multi-media keys:
 # =================
 bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
@@ -241,5 +152,38 @@ bindsym XF86AudioLowerVolume 	exec ~/.local/bin/audio.sh sub
 #bindsym XF86AudioForward		exec
 bindsym XF86MonBrightnessDown	exec lux -s 50
 bindsym XF86MonBrightnessUp		exec lux -a 50
+
+# Status bar:
+# ===========
+bar {
+	position bottom
+	status_command i3blocks
+	font Inconsolata Nerd Font
+	colors {
+		statusline #ffffff
+		background #000000
+		focused_workspace	#000000 #000000 #00ff00
+		inactive_workspace	#000000 #000000 #ffff00
+		active_workspace	#000000 #000000 #ffff00
+	}
+}
+
+# Input settings:
+# ===============
+input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
+	xkb_options caps:escape
+	repeat_delay 200
+	repeat_rate 25
+}
+input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
+	xkb_options caps:escape
+	repeat_delay 250
+	repeat_rate 25
+}
+
+input 2821:6170:ASUS_ROG_GLADIUS {
+	scroll_factor 2
+	natural_scroll enabled
+}
 
 include /etc/sway/config.d/*
