@@ -60,7 +60,7 @@ exec_always swayidle -w \
 	bindsym $mod+shift+z		exec ~/.local/bin/screencast.sh stop
 	bindsym $mod+m				exec ~/.local/bin/open-web-cam.sh
 	bindsym $mod+d				exec $menu
-	bindsym $mod+shift+w		exec ~/.local/bin/floating-term.sh nmtui
+	bindsym $mod+shift+w		exec nm-connection-editor
 	
 	# System managment:
 	# -----------------
@@ -71,15 +71,16 @@ exec_always swayidle -w \
 									swaymsg exit
 
 # Window specific settings
-client.focused						#00ff00 #000000 #ffffff #ff00ff #00ff00
-client.unfocused					#ffff00 #000000 #ffffff #000000 #ffff00
-for_window [class="^.*"]			border pixel 1
-for_window [app_id="^.*"]			border pixel 1
-for_window [app_id="^.*_floating"]	floating enable
-for_window [app_id="Firefox"]		inhibit_idle fullscreen
-for_window [app_id="firefox"]		inhibit_idle fullscreen
-for_window [app_id="mpv"]			inhibit_idle
-for_window [app_id="zenity"]		floating enable
+client.focused								#00ff00 #000000 #ffffff #ff00ff #00ff00
+client.unfocused							#ffff00 #000000 #ffffff #000000 #ffff00
+for_window [class="^.*"]					border pixel 1
+for_window [app_id="^.*"]					border pixel 1
+for_window [app_id="^.*_floating"]			floating enable
+for_window [app_id="Firefox"]				inhibit_idle fullscreen
+for_window [app_id="firefox"]				inhibit_idle fullscreen
+for_window [app_id="mpv"]					inhibit_idle
+for_window [app_id="zenity"]				floating enable
+for_window [app_id="nm-connection-editor"]	floating enable
 
 gaps inner 8
 output * bg ~/.config/wallpaper.* fill
@@ -140,9 +141,9 @@ output HDMI-A-3 pos 0 0 res 1920x1080
 # Multi-media keys:
 # =================
 bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
-bindsym XF86AudioMute			exec ~/.local/bin/audio.sh mute 
-bindsym XF86AudioRaiseVolume 	exec ~/.local/bin/audio.sh add
-bindsym XF86AudioLowerVolume 	exec ~/.local/bin/audio.sh sub
+bindsym XF86AudioMute			exec  ~/.local/bin/audio.sh mute 
+bindsym XF86AudioRaiseVolume 	exec  ~/.local/bin/audio.sh add
+bindsym XF86AudioLowerVolume 	exec  ~/.local/bin/audio.sh sub
 #bindsym XF86PowerOff			exec 
 #bindsym XF86AudioNext			exec
 #bindsym XF86AudioPlay			exec
