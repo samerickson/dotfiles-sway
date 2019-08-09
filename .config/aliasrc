@@ -51,13 +51,17 @@ alias	dotf="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
 		dotcm="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S -m" \
 		dotb="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch" \
 		dotch="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout" \
-		dotl="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME log" \
+		dotl="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline" \
 		dotd="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff"
 
 # Saving a few key presses off frequently uses git commands
 alias	gc="git commit -S -m" \
 		gs="git status" \
-		ga="git add"
+		ga="git add" \
+		gd="git diff" \
+		gr="git remote" \
+		gl="git log --oneline" \
+		gp="git push"
 
 # These ones are here just for fun
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
