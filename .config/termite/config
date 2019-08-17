@@ -37,25 +37,25 @@ background = 		#000000
 
 # black
 color0  =	#000000
-color8  =	#000000
+color8  =	#555555
 # Red
 color1  =	#FF0000
-color9  =	#FF0000
+color9  =	#FF5555
 # Green
 color2  =	#00FF00
-color10 =	#00FF00
+color10 =	#55FF55
 # Yellow
 color3  =	#FFFF00
-color11 =	#FFFF00
+color11 =	#FFFF55
 # Blue
 color4  =	#0000FF
-color12 =	#0000FF
+color12 =	#55555FF
 # Magenta
 color5  =	#FF00FF
-color13 =	#FF00FF
+color13 =	#FF55FF
 # Cyan
 color6  =	#00FFFF
-color14 =	#00FFFF
+color14 =	#55FFFF
 # White
-color7  =	#FFFFFF
+color7  =	#AAAAAA
 color15 =	#FFFFFF
