@@ -73,6 +73,7 @@ slurp
 swayidle
 swaylock
 termite
+galculator
 ```
 
 Issues
@@ -91,6 +92,18 @@ Links related to the issue:
 as I would like to use `firefox` its just too broken for me to justify it. Even
 though `chromium` does not officially support `wayland`, it still appears to be the
 better option, as lots of other apps used are ran using `xwayland` anyway.
+
+Documentation
+-------------
+The man pages are usually the best place to go as community support with swaywm
+are limited, with the exception of asking your questions on 
+[reddit](https://www.reddit.com/r/swaywm) or the *#sway* IRC channel, there are
+very few forms online detailing issues that users have had and how to fix them.
+This may be a good thing though, as it forces you to get used to reading
+documentation and troubleshooting for yourself.
+
+Here are some useful links for learning about what you can do with sway:
+https://www.mankier.com/5/sway
 
 Wacom drawing tablets
 ---------------------

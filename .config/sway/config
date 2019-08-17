@@ -7,7 +7,7 @@ set $mod		Mod4
 set $term		termite
 set $browser	chromium
 set $file		pcmanfm
-set $menu		dmenu_run
+set $menu		dmenu-wl_run
 set $sleep swayidle -w \
     timeout 1 'swaymsg "output * dpms off"' \
     timeout 2 'swaylock -f -c 3f6375' \
@@ -30,7 +30,7 @@ exec_always swayidle -w \
 # ===========
 
 	# Window management:
-	#------------------
+	# ------------------
 	bindsym $mod+o				exec ~/.local/bin/swayresize.sh left
 	bindsym $mod+i				exec ~/.local/bin/swayresize.sh down
 	bindsym $mod+u				exec ~/.local/bin/swayresize.sh up
@@ -51,8 +51,9 @@ exec_always swayidle -w \
 	# ----------------------
 	bindsym $mod+Return			exec $term
 	bindsym $mod+Shift+Return	exec ~/.local/bin/floating-term.sh
-	bindsym $mod+a				exec $term -e bc
+	bindsym $mod+a				exec galculator
 	bindsym $mod+w				exec $browser
+	bindsym $mod+Shift+w		exec env GDK_BACKEND=wayland firefox
 	bindsym $mod+f				exec $file
 	bindsym $mod+p				exec --release screenshot
 	bindsym $mod+c				exec clipman -s --selector="dmenu"
@@ -60,7 +61,6 @@ exec_always swayidle -w \
 	bindsym $mod+shift+z		exec ~/.local/bin/screencast.sh stop
 	bindsym $mod+m				exec ~/.local/bin/open-web-cam.sh
 	bindsym $mod+d				exec $menu
-	bindsym $mod+shift+w		exec nm-connection-editor
 	
 	# System managment:
 	# -----------------
@@ -73,6 +73,7 @@ exec_always swayidle -w \
 # Window specific settings
 client.focused								#00ff00 #000000 #ffffff #ff00ff #00ff00
 client.unfocused							#ffff00 #000000 #ffffff #000000 #ffff00
+for_window [app_id="galculator"]			floating enable
 for_window [class="^.*"]					border pixel 1
 for_window [app_id="^.*"]					border pixel 1
 for_window [app_id="^.*_floating"]			floating enable
