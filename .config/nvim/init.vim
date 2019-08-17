@@ -34,5 +34,5 @@ call plug#end()
 	nnoremap <silent> <leader>sv :so $MYVIMRC
 
 " Changes for specific files types
-	autocmd filetype html,xml set shiftwidth=2 tabstop=2
-
+	autocmd filetype php		set filetype=html
+	autocmd filetype html,xml	set shiftwidth=2 tabstop=2 smartindent
