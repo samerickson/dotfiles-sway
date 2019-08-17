@@ -11,9 +11,13 @@ command=~/.config/i3blocks/scripts/webcam.sh
 interval=3
 command=~/.config/i3blocks/scripts/recording.sh
 
-[display-manager]
-interval=once
-command=~/.config/i3blocks/scripts/display-manager.sh
+[memory]
+interval=15
+command=~/.config/i3blocks/scripts/memory-usage.sh
+
+[temp]
+interval=15
+command=~/.config/i3blocks/scripts/temp.sh
 
 [disk-usage-root]
 interval=60
