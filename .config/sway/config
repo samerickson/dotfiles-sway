@@ -5,7 +5,7 @@
 # =========
 set $mod		Mod4
 set $term		termite
-set $browser	chromium
+set $browser	env GDK_BACKEND=wayland firefox
 set $file		pcmanfm
 set $menu		dmenu-wl_run
 set $sleep swayidle -w \
@@ -38,7 +38,7 @@ exec_always swayidle -w \
 	bindsym $mod+Shift+q		kill
 	bindsym $mod+Shift+s		layout stacking
 	bindsym $mod+Shift+t		layout tabbed
-	bindsym $mod+e				layout toggle split
+	bindsym $mod+t				layout toggle split
 	bindsym $mod+b				splith
 	bindsym $mod+v				splitv
 	bindsym $mod+shift+f		fullscreen
@@ -47,13 +47,13 @@ exec_always swayidle -w \
 	bindsym $mod+Shift+minus	move scratchpad
 	bindsym $mod+minus			scratchpad show
 	
-	# Starting apllications:
+	# Launching apllications:
 	# ----------------------
 	bindsym $mod+Return			exec $term
 	bindsym $mod+Shift+Return	exec ~/.local/bin/floating-term.sh
 	bindsym $mod+a				exec galculator
 	bindsym $mod+w				exec $browser
-	bindsym $mod+Shift+w		exec env GDK_BACKEND=wayland firefox
+	bindsym $mod+Shift+w		exec ~/.local/bin/floating-term.sh nmtui
 	bindsym $mod+f				exec $file
 	bindsym $mod+p				exec --release screenshot
 	bindsym $mod+c				exec clipman -s --selector="dmenu"
@@ -74,10 +74,8 @@ exec_always swayidle -w \
 client.focused								#00ff00 #000000 #ffffff #ff00ff #00ff00
 client.unfocused							#ffff00 #000000 #ffffff #000000 #ffff00
 for_window [app_id="galculator"]			floating enable
-for_window [class="^.*"]					border pixel 1
 for_window [app_id="^.*"]					border pixel 1
 for_window [app_id="^.*_floating"]			floating enable
-for_window [app_id="Firefox"]				inhibit_idle fullscreen
 for_window [app_id="firefox"]				inhibit_idle fullscreen
 for_window [app_id="mpv"]					inhibit_idle
 for_window [app_id="zenity"]				floating enable
@@ -160,7 +158,7 @@ bindsym XF86MonBrightnessUp		exec lux -a 50
 bar {
 	position bottom
 	status_command i3blocks
-	font Inconsolata Nerd Font
+	font CodeNewRoman Nerd Font Mono 12
 	colors {
 		statusline #ffffff
 		background #000000
@@ -176,6 +174,10 @@ input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
 	repeat_delay 200
 	repeat_rate 25
+}
+input 1452:610:bcm5974 {
+	natural_scroll enabled
+	tap enabled
 }
 input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
 	xkb_options caps:escape
