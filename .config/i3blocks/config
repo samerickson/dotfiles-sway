@@ -12,11 +12,11 @@ interval=3
 command=~/.config/i3blocks/scripts/recording.sh
 
 [memory]
-interval=15
+interval=1
 command=~/.config/i3blocks/scripts/memory-usage.sh
 
 [temp]
-interval=15
+interval=1
 command=~/.config/i3blocks/scripts/temp.sh
 
 [disk-usage-root]
@@ -41,5 +41,5 @@ interval=1
 command=~/.config/i3blocks/scripts/date.sh
 
 [network]
-interval=15
+interval=5
 command=~/.config/i3blocks/scripts/network.sh
