@@ -12,6 +12,9 @@ alias	mx="chmod a+x"
 # Reload shell environment
 alias	src="source ~/.bashrc; echo 'reloaded .bashrc'"
 
+# Open notes
+alias	n="vim ~/notes/index.wiki"
+
 # Directories
 alias	b="cs ~/.local/bin" \
 		m="cs ~/.local/misc" \
@@ -26,7 +29,7 @@ alias	b="cs ~/.local/bin" \
 		P="cs ~/Pictures" \
 		t="cs ~/Downloads/transmission" \
 		T="cs ~/.local/tap" \
-		i="cs ~/.local/share/icons/default"
+		i="cs ~/.local/share/icons/default" \
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR ~/.bashrc" \
