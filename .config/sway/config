@@ -55,7 +55,7 @@ exec_always swayidle -w \
 	bindsym $mod+w				exec $browser
 	bindsym $mod+Shift+w		exec ~/.local/bin/floating-term.sh nmtui
 	bindsym $mod+f				exec $file
-	bindsym $mod+p				exec --release screenshot
+	bindsym $mod+p				exec ~/.local/bin/screenshot
 	bindsym $mod+c				exec clipman -s --selector="dmenu"
 	bindsym $mod+z				exec ~/.local/bin/screencast.sh start
 	bindsym $mod+shift+z		exec ~/.local/bin/screencast.sh stop
