@@ -34,7 +34,7 @@ call plug#end()
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Wrap text to 80 characters to keep my grades up at school
-	autocmd BufRead,BufNewFile *.md,*.wiki setlocal textwidth=80
+	autocmd BufRead,BufNewFile *.md,*.wiki setlocal textwidth=79
 
 " Personal shortcuts
 	nnoremap <leader>s :set spell!<CR>
@@ -50,4 +50,9 @@ call plug#end()
 " Changes for specific files types
 	autocmd filetype php		set filetype=html
 	autocmd filetype html,xml	set shiftwidth=2 tabstop=2 smartindent
+	autocmd filetype vimwiki	set filetype=markdown
 
+" Vimwiki settings
+	let g:vimwiki_global_ext = 0
+	let g:vimwiki_list = [{'path': '~/notes/',
+		\ 'syntax': 'markdown', 'ext': '.md' }]
