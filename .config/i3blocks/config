@@ -4,28 +4,28 @@ markup=pango
 separator_block_width=20
 
 [web-cam]
-interval=3
+interval=10
 command=~/.config/i3blocks/scripts/webcam.sh
 
 [recording]
-interval=3
+interval=10
 command=~/.config/i3blocks/scripts/recording.sh
 
 [memory]
-interval=1
+interval=5
 command=~/.config/i3blocks/scripts/memory-usage.sh
 
 [temp]
-interval=1
+interval=30
 command=~/.config/i3blocks/scripts/temp.sh
 
-[disk-usage-root]
-interval=60
-command=~/.config/i3blocks/scripts/disk.sh /
+#[disk-usage-root]
+#interval=60
+#command=~/.config/i3blocks/scripts/disk.sh /
 
-[disk-usage-home]
-interval=60
-command=~/.config/i3blocks/scripts/disk.sh /home
+#[disk-usage-home]
+#interval=60
+#command=~/.config/i3blocks/scripts/disk.sh /home
 
 [volume]
 interval=once
