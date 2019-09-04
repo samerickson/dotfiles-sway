@@ -55,8 +55,8 @@ mpv
 imv
 networkmanager
 noto-fonts-emoji
-pcmanfm
 dmenu
+thunar
 grim
 mako
 sway
