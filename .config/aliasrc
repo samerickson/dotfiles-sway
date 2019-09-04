@@ -14,7 +14,9 @@ alias	src="source ~/.bashrc; echo 'reloaded .bashrc'"
 
 # Open notes
 alias	n="vim ~/notes/index.md" \
-		N="cs ~/notes"
+		N="cs ~/notes" \
+		v="vim ~/notes/viu/index.md" \
+		V="cs ~/notes/viu"
 
 # Directories
 alias	b="cs ~/.local/bin" \
