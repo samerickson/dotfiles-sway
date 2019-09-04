@@ -6,7 +6,7 @@
 set $mod		Mod4
 set $term		termite
 set $browser	env GDK_BACKEND=wayland firefox
-set $file		pcmanfm
+set $file		thunar
 set $menu		dmenu-wl_run
 set $sleep swayidle -w \
     timeout 1 'swaymsg "output * dpms off"' \
@@ -152,6 +152,12 @@ bindsym XF86AudioLowerVolume 	exec  ~/.local/bin/audio.sh sub
 #bindsym XF86AudioForward		exec
 bindsym XF86MonBrightnessDown	exec lux -s 50
 bindsym XF86MonBrightnessUp		exec lux -a 50
+bindsym XF86PowerOff			exec zenity --question --text \
+                                    "Are you sure you wish to shut down now?" && \
+                                    shutdown now
+
+
+
 
 # Status bar:
 # ===========
