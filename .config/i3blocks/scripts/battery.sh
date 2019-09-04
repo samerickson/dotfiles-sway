@@ -23,5 +23,8 @@ else
 	color="$white"
 fi 
 
-printf "<span color='%s'>BATTERY:</span><span color='%s'>%s</span>" "$yellow" "$color" "$current%"
+# Log battery percantage to log in .local/logs
+#printf "[%s] %s\n" "$(date)" "$current" >> ~/.local/logs/battery.log
+
+printf "<span color='%s'>BAT:</span><span color='%s'>%s</span>" "$yellow" "$color" "$current%"
 
