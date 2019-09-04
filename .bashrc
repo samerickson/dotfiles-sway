@@ -3,6 +3,16 @@
 [[ $- != *i* ]] && return
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
+# History hacks
+HISTSIZE=50000000000000000
+HISTFILESIZE=9999999999999
+shopt -s histappend 
+shopt -s direxpand
+shopt -s expand_aliases
+
+export PROMPT_COMMAND='history -a; history -c; history -r; printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+
+
 GOPATH="$HOME/.go"
 PATH="$PATH:$HOME/.local/bin:$HOME/.local/private/bin:$GOPATH/bin"
 
