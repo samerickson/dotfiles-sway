@@ -13,7 +13,8 @@ alias	mx="chmod a+x"
 alias	src="source ~/.bashrc; echo 'reloaded .bashrc'"
 
 # Open notes
-alias	n="vim ~/notes/index.wiki"
+alias	n="vim ~/notes/index.md" \
+		N="cs ~/notes"
 
 # Directories
 alias	b="cs ~/.local/bin" \
@@ -23,7 +24,7 @@ alias	b="cs ~/.local/bin" \
 		d="cs ~/Downloads" \
 		h="cs ~" \
 		l="cs ~/.local" \
-		s="cs ~/Github/samerickson.me" \
+		cds="cs ~/Github/samerickson.me" \
 		g="cs ~/Github" \
 		p="cs ~/.local/private" \
 		P="cs ~/Pictures" \
