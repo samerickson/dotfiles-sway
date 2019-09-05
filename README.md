@@ -44,6 +44,15 @@ your hard drive, the current file tree map is as follows:
 └── README.md:					This document.
 ```
 
+Install
+-------
+**Fresh install of Arch linux:** clone the repository into your home folder
+```
+git clone https://github.com/samerickson/dotfiles.git /home/$USER
+```
+*It is probably safer to clone the repository then copy the files into home.*
+
+
 Dependencies
 ------------
 ```
