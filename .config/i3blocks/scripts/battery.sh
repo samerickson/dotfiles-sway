@@ -6,6 +6,7 @@
 #		BATTERY LEVEL > 80% -- OUTPUT COLOR GREEN
 #		BATTERY LEVEL < 20% -- OUTPUT COLOR YELLOW
 #		BATTERY LEVEL < 10% -- OUTPUT COLOR RED
+#		BATTERY CHARGING	-- OUTPUT COLOR MAGENTA
 
 . ~/.config/colorsrc
 
@@ -22,6 +23,10 @@ elif [[ "$current" -gt 80 ]]; then
 else
 	color="$white"
 fi 
+
+if [ "$(cat /sys/class/power_supply/BAT0/status)" == "Charging" ]; then
+	color="$magenta"
+fi
 
 # Log battery percantage to log in .local/logs
 #printf "[%s] %s\n" "$(date)" "$current" >> ~/.local/logs/battery.log
