@@ -56,4 +56,4 @@ genfstab -U /mnt > /mnt/etc/fstab
 echo "arch-vb" > /mnt/etc/hostname
 
 # Download next script, chroot into new system
-curl https://samerickson.me/chroot.sh > /mnt/chroot.sh && arch-chroot /mnt /bin/bash
+curl https://raw.githubusercontent.com/samerickson/dotfiles/master/tests/chroot.sh > /mnt/chroot.sh && arch-chroot /mnt /bin/bash
