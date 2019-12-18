@@ -1,7 +1,14 @@
 DOTFILES [SWAYWM]
-=================
-My current dotfiles to recreate my development environment.
-
+================= 
+My current dotfiles to recreate my development environment. This project is
+currently on hold, as I am running macOS on my laptop right now for school, and
+I am looking at reviving this project with some automatic install scripts. The
+dotfiles themselves will not change much, but the way Arch Linux is installed
+and configured will be. This project is and always was to serve as an
+example/tutorial for how to get started with the "ricing" of an operating
+system as an introduction to the more advanced side of Linux as a desktop. As
+my knowledge of operating systems and the command line evolve, this repository
+will follow suit. 
 ![Clean image of my desktop](images/clean.png)
 ![Busy image of my desktop](images/busy.png)
 
@@ -10,7 +17,7 @@ Features
 
 **Moderatly minimal install:**
 Not quite [suckless](https://suckless.org) Level, but minimal enough to
-lightweight, quick to install, while still having applications the accomplish
+lightweight, quick to install, while still having applications accomplish
 everyday tasks. 
 
 **Notifications with icons for system information:**
@@ -53,38 +60,6 @@ git clone https://github.com/samerickson/dotfiles.git /home/$USER
 *It is probably safer to clone the repository then copy the files into home.*
 
 
-Dependencies
-------------
-```
-clipman
-clipmenu
-matcha-gtk-theme
-matcha-icon-theme
-mpv
-imv
-networkmanager
-noto-fonts-emoji
-dmenu
-thunar
-grim
-mako
-sway
-pulse
-nvim
-wf-recorder
-zathura-djvu
-zathura-prd-poppler
-alsa-utils
-chromium
-i3blocks
-jq
-slurp
-swayidle
-swaylock
-termite
-galculator
-```
-
 Issues
 ------
 **firefox:**
@@ -105,7 +80,7 @@ better option, as lots of other apps used are ran using `xwayland` anyway.
 Documentation
 -------------
 The man pages are usually the best place to go as community support with swaywm
-are limited, with the exception of asking your questions on 
+are limited, except for asking your questions on 
 [reddit](https://www.reddit.com/r/swaywm) or the *#sway* IRC channel, there are
 very few forms online detailing issues that users have had and how to fix them.
 This may be a good thing though, as it forces you to get used to reading
@@ -113,6 +88,40 @@ documentation and troubleshooting for yourself.
 
 Here are some useful links for learning about what you can do with sway:
 https://www.mankier.com/5/sway
+
+Tests
+-----
+In the tests directory are a collection of scripts that can be used to easily
+create a VirtualBox environment for testing this project. 
+
+Create a new VirtualBox instance with 25GB hard disk, run selecting an
+[arch-linux.iso](https://www.archlinux.org/download/) as the disk image. 
+Then run one of the following commands:
+```
+# Use regular partitions
+wget https://git.io/Je7hh
+
+# Use logical volumes
+wget https://git.io/Je7jk
+```
+
+**Minified URL to chroot.sh:** 
+```
+https://git.io/Je7hx
+```
+
+**Minified URL to arch-vbox.sh:**
+```
+https://git.io/Je7hh
+```
+
+**Minified URL to arch-vbox-lvm.sh**
+```
+https://git.io/Je7jk
+```
+
+The above URL's were shortened using [git.io](https://git.io). Eventually there
+will be more automatic tests that can be conducted.
 
 Wacom drawing tablets
 ---------------------
