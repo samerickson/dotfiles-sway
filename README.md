@@ -107,17 +107,22 @@ wget https://git.io/Je7jk
 
 **Minified URL to chroot.sh:** 
 ```
-https://git.io/Je7hx
+https://git.io/Je5R0
 ```
 
 **Minified URL to arch-vbox.sh:**
 ```
-https://git.io/Je7hh
+https://git.io/Je5Rl
 ```
 
-**Minified URL to arch-vbox-lvm.sh**
+**Minified URL to arch-lvm.sh**
 ```
-https://git.io/Je7jk
+https://git.io/Je5RR
+```
+
+**Minified URL to yay.sh:**
+```
+https://git.io/Je5RE
 ```
 
 The above URL's were shortened using [git.io](https://git.io). Eventually there
