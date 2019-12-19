@@ -26,31 +26,6 @@ notifications. Most, if not all key-bindings will notify you of any background
 processes, or if anything has gone wrong.
 ![Image of notifications](images/notification.png)
 
-**Organized for easy tinkering:**
-It can be a pain when your configuration files and programs are scattered across
-your hard drive, the current file tree map is as follows:
-```
-├── .bash_profile				Links to .bashrc
-├── .bashrc						Bash configuration file
-├── .config/					Containes most applicaions configuration files	
-│   ├── aliasrc					All bash aliases
-│   ├── i3blocks/
-│   │   └── scripts/			Containes all scripts related to statusbar
-│	│ 								functions
-│   ├── wallpaper.png			Symlinked to the selected background image in
-│									~/.config/wallpapers
-├── .local/
-│   ├── share/
-│ 	│ 	└── .icons/				Contains all icons used for notifications
-│   ├── bin/					Contains all executables, listed in $PATH
-│   └── misc/
-│       ├── install-scripts/	Contains various scripts used to install things
-│		│ 							that may be considered useful.
-│       └── systemd-files/		Contains all custom service for systemd
-├── .profile:					Links to .bashrc
-└── README.md:					This document.
-```
-
 Install
 -------
 **Fresh install of Arch linux:** clone the repository into your home folder
@@ -58,7 +33,6 @@ Install
 git clone https://github.com/samerickson/dotfiles.git /home/$USER
 ```
 *It is probably safer to clone the repository then copy the files into home.*
-
 
 Issues
 ------
@@ -88,45 +62,6 @@ documentation and troubleshooting for yourself.
 
 Here are some useful links for learning about what you can do with sway:
 https://www.mankier.com/5/sway
-
-Tests
------
-In the tests directory are a collection of scripts that can be used to easily
-create a VirtualBox environment for testing this project. 
-
-Create a new VirtualBox instance with 25GB hard disk, run selecting an
-[arch-linux.iso](https://www.archlinux.org/download/) as the disk image. 
-Then run one of the following commands:
-```
-# Use regular partitions
-wget https://git.io/Je7hh
-
-# Use logical volumes
-wget https://git.io/Je7jk
-```
-
-**Minified URL to chroot.sh:** 
-```
-https://git.io/Je5R0
-```
-
-**Minified URL to arch-vbox.sh:**
-```
-https://git.io/Je5Rl
-```
-
-**Minified URL to arch-lvm.sh**
-```
-https://git.io/Je5RR
-```
-
-**Minified URL to yay.sh:**
-```
-https://git.io/Je5RE
-```
-
-The above URL's were shortened using [git.io](https://git.io). Eventually there
-will be more automatic tests that can be conducted.
 
 Wacom drawing tablets
 ---------------------
