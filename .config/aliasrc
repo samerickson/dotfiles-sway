@@ -53,8 +53,8 @@ alias 	ls="ls --color=auto" \
 alias	dotf="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
 		dota="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add" \
 		dots="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno" \
-		dotc="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S" \
-		dotcm="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -S -m" \
+		dotc="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit" \
+		dotcm="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m" \
 		dotb="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch" \
 		dotch="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout" \
 		dotl="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline" \
