@@ -15,4 +15,4 @@
 
 [ "$volume" = "MUTED" ] || volume="$volume%"
 
-printf "<span color='%s'>Vol: </span><span color='%s'>%s</span>" "$yellow" "$color" "$volume"
+printf "<span color='%s'>Vol: </span><span color='%s'>%s</span>\n" "$yellow" "$color" "$volume"

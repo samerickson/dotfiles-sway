@@ -9,11 +9,12 @@
 . ~/.config/colorsrc
 
 # Check for internet connection
-if [ $(cat /sys/class/net/ens*/operstate) == "up" ] || \
-	[ $(cat /sys/class/net/wlp*/operstate) == "up" ]; then
-	color="$lime"
-else
-	color="$red"
-fi 
+#if [ $(cat /sys/class/net/ens*/operstate) == "up" ] || \
+#	[ $(cat /sys/class/net/wlp2s0/operstate) == "up" ]; then
 
-printf "<span color='%s'>%s</span>" "$color" "$(hostname -i | awk '{ print $1 }')"
+[ $(cat /sys/class/net/wlp2s0/operstate) == "up" ] && \
+	color="$lime" || \
+	color="$red"
+
+# TODO: Change "Network" to local ip address
+printf "<span color='%s'>%s</span>\n" "$color" "Network"
