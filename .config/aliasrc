@@ -62,14 +62,14 @@ dotf() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@ }
 dota() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $@ }
 dots() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno }
 dotc() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit }
-dotcm() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m "$@" }
+dotcm() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m $@ }
 dotb() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch $@ }
 dotch() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout $@ }
 dotl() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline }
 dotd() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff $@ }
 
 # Saving a few key presses off frequently uses git commands
-gc() { git commit -S -m "$@" }
+gc() { git commit -S -m $@ }
 gs() { git status }
 ga() { git add  $@ }
 gd() { git diff $@ }
