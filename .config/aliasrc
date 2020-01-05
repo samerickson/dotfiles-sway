@@ -13,8 +13,7 @@ alias	vim="nvim" vi="nvim" \
 alias	mx="chmod a+x"
 
 # Reload shell environment
-alias	src="source ~/.profile; source ~/.zshrc; \
-				echo 'reloaded .zshrc .profile'"
+alias	src="source ~/.zshrc; echo 'reloaded .zshrc'"
 
 # Open notes
 alias	n="vim ~/notes/index.md" \
@@ -52,18 +51,18 @@ alias 	ls="ls --color=auto" \
 		ll="ls -l" \
 		la="ls -a" \
 		llh="ls -lh" \
-		lah="ls -lah" \
+		lah="ls -lah"
 
 # Managing dotfiles / otherwise that is a lot of typting for routine file managment
-alias	dotf="git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
-		dota="git --git-dir=$HOME/.dotfiles --work-tree=$HOME add" \
-		dots="git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno" \
-		dotc="git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit" \
-		dotcm="git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m" \
-		dotb="git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch" \
-		dotch="git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout" \
-		dotl="git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline" \
-		dotd="git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff"
+dotf() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@; }
+dota() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $@; }
+dots() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno $@ }
+dotc() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit $@ }
+dotcm() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m $@ }
+dotb() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch $@ }
+dotch() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout $@ }
+dotl() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline $@ }
+dotd() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff $@ }
 
 # Saving a few key presses off frequently uses git commands
 alias	gc="git commit -S -m" \
@@ -77,7 +76,7 @@ alias	gc="git commit -S -m" \
 # FUNCTIONS:
 # ==========
 # Delete nvim swapfiles
-function delswp() { rm ~/.local/share/nvim/swap/*; }
+delswp() { rm ~/.local/share/nvim/swap/*; }
 
 # Search bash history
 hist() { history | grep $@; }
@@ -88,7 +87,7 @@ cs() { cd $1 && echo "$1" && ls; }
 # Moves all passed paramenters into the trash (located in ~/.Trash)
 trash() {
     for var in "$@"; do
-        mv -nv "$var" "~/.trash"
+        mv -nv "$var" "~/.trash/"
     done
 }
 
