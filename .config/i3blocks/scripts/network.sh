@@ -17,4 +17,4 @@
 	color="$red"
 
 # TODO: Change "Network" to local ip address
-printf "<span color='%s'>%s</span>\n" "$color" "Network"
+printf "<span color='%s'>%s</span>\n" "$color" "$(ip route | head -1 | awk 'NR=1{print $3}')"
