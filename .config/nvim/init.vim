@@ -65,19 +65,6 @@ call plug#end()
 	" Use ctrl+l to correct spelling on the fly
 	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-
-" Shortcuts to opening frequently accessed files in a new tab
-	" Shell files
-	nnoremap <leader>cfa :tabnew ~/.config/aliasrc
-	nnoremap <leader>cfz :tabnew ~/.zshrc
-	nnoremap <leader>cfb :tabnew ~/.bash_profile
-	nnoremap <leader>cft :tabnew ~/.tmux.conf
-
-	" Vimrc
-	nnoremap <leader>cfv :tabnew $MYVIMRC
-	nnoremap <leader>sv :so $MYVIMRC
-
-
 " Changes for specific files types
 	autocmd filetype php		set filetype=html
 	autocmd filetype html,xml	set shiftwidth=2 tabstop=2 smartindent
