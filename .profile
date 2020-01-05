@@ -1,5 +1,8 @@
 #!/bin/sh
 
+export EDITOR="nvim"
+export VISUAL="$EDITOR"
+
 # XDG User Directory
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
