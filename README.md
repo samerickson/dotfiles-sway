@@ -1,20 +1,11 @@
 DOTFILES [SWAYWM]
 ================= 
-My current dotfiles to recreate my development environment. This project is
-currently on hold, as I am running macOS on my laptop right now for school, and
-I am looking at reviving this project with some automatic install scripts. The
-dotfiles themselves will not change much, but the way Arch Linux is installed
-and configured will be. This project is and always was to serve as an
-example/tutorial for how to get started with the "ricing" of an operating
-system as an introduction to the more advanced side of Linux as a desktop. As
-my knowledge of operating systems and the command line evolve, this repository
-will follow suit. 
+Very much a work in progress...
 ![Clean image of my desktop](images/clean.png)
 ![Busy image of my desktop](images/busy.png)
 
 Features
 --------
-
 **Moderatly minimal install:**
 Not quite [suckless](https://suckless.org) Level, but minimal enough to
 lightweight, quick to install, while still having applications accomplish
@@ -28,28 +19,8 @@ processes, or if anything has gone wrong.
 
 Install
 -------
-**Fresh install of Arch linux:** clone the repository into your home folder
-```
-git clone https://github.com/samerickson/dotfiles.git /home/$USER
-```
-*It is probably safer to clone the repository then copy the files into home.*
-
-Issues
-------
-**firefox:**
-`Firefox` has way to many issues, for example below is an image of how firefox's
-window sizing on startup is broken. 
-![image of firefox window issues](images/firefox.png)
-Links related to the issue:
-
-* https://www.reddit.com/r/firefox/comments/624pjf/tiling_window_managersfirefox_screen_messed_up/
-* https://github.com/xmonad/xmonad/issues/144
-* https://bugzilla.mozilla.org/show_bug.cgi?id=686747
-
-`Firefox` also produces sesuire inducing visuals while trying to resize. As much
-as I would like to use `firefox` its just too broken for me to justify it. Even
-though `chromium` does not officially support `wayland`, it still appears to be the
-better option, as lots of other apps used are ran using `xwayland` anyway.
+***USE AT YOUR OWN RISK***
+Copy all files into your home directory.
 
 Documentation
 -------------
