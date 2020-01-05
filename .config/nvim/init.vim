@@ -1,31 +1,37 @@
-" File              : init.vim
-" Author            : sam@samerickson.me
-" Date              : 24.08.2019
-" Last Modified Date: 24.08.2019
-" Last Modified By  : Sam Erickson <sam@samerickson.me>
-let mapleader =","
+" File: ~/.config/nvim/init.vim
+" Author: Sam Erickson
+" License: MIT
+
+" Load plugin manager if it is not already installed
+if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ~/.config/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
 
 call plug#begin('~/.config/nvim/plugins')
 	Plug 'vimwiki/vimwiki'
-	Plug 'samerickson/vim-header'
+	Plug 'scrooloose/nerdtree'
+	Plug 'junegunn/goyo.vim'
 call plug#end()
 
-" vim-header infomration
-	let g:header_auto_add_header = 0
-	let g:header_field_author = 'Sam Erickson'
-	let g:header_field_author_email = 'sam@samerickson.me'
-	map <F4> :AddHeader<CR>
-	map <F3> :AddGNULicense<CR>
-	map <F2> :AddMITLicence<CR>
-
 " Some basics:
-	set nocompatible
-	set nohlsearch
+	let mapleader =","
+	map <CapsLock> <Esc>
+	set laststatus=2 ruler rulerformat=%l,%v
+	set nocompatible nohlsearch
 	filetype plugin on
 	syntax on
-	set listchars=tab:>-,trail:·
+	set listchars=tab:»·,extends:›,precedes:·,trail:·
 	set sw=4 sts=4 ts=4 noet
 	set splitbelow splitright
+	set history=1000 undolevels=1000
+	set wildmenu
+	set scrolloff=10
+
+	" Allows vim yank and paste to use the system clipboard
+	set clipboard=unnamed
 
 " Enable autocompletion:
 	set wildmode=longest,list,full
@@ -33,19 +39,44 @@ call plug#end()
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Wrap text to 80 characters to keep my grades up at school
-	autocmd BufRead,BufNewFile *.md,*.wiki setlocal textwidth=79
+" Special markdown and wiki file settings
+	autocmd BufRead,BufNewFile *.md,*.wiki setlocal textwidth=79 spell
 
 " Personal shortcuts
+	" Shortcuts to frequently toggled settings
 	nnoremap <leader>s :set spell!<CR>
 	nnoremap <leader>l :set list!<CR>
-	nnoremap S :%s//g<Left><Left>
 	nnoremap <leader>m :set number!<CR>
 	nnoremap <leader>n :set relativenumber!<CR>
 
-" Open vimrc in new buffer / reload vimrc
-	nnoremap <silent> <leader>ev :new $MYVIMRC
-	nnoremap <silent> <leader>sv :so $MYVIMRC
+	" Shortcuts to frequently used functions
+	nnoremap S :%s//g<Left><Left>
+
+	" Plugin specific keybindings
+	nnoremap <leader>n :NERDTreeToggle<CR>
+	nnoremap <leader>g :Goyo<CR>
+
+	" Better navigation of split windows
+	map <C-J> <C-W><C-J>
+	map <C-K> <C-W><C-K>
+	map <C-L> <C-W><C-L>
+	map <C-H> <C-W><C-H>
+	
+	" Use ctrl+l to correct spelling on the fly
+	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+
+" Shortcuts to opening frequently accessed files in a new tab
+	" Shell files
+	nnoremap <leader>cfa :tabnew ~/.config/aliasrc
+	nnoremap <leader>cfz :tabnew ~/.zshrc
+	nnoremap <leader>cfb :tabnew ~/.bash_profile
+	nnoremap <leader>cft :tabnew ~/.tmux.conf
+
+	" Vimrc
+	nnoremap <leader>cfv :tabnew $MYVIMRC
+	nnoremap <leader>sv :so $MYVIMRC
+
 
 " Changes for specific files types
 	autocmd filetype php		set filetype=html
@@ -54,5 +85,6 @@ call plug#end()
 
 " Vimwiki settings
 	let g:vimwiki_global_ext = 0
-	let g:vimwiki_list = [{'path': '~/notes/',
+	let g:vimwiki_list = [{'path': '~/OneDrive/notes/',
 		\ 'syntax': 'markdown', 'ext': '.md' }]
+
