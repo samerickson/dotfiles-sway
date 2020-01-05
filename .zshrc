@@ -1,8 +1,8 @@
-
+# ~/.zsh
 export ZSH="/home/erickssb/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-plugins=(git colored-man-pages colorize zsh-syntax-highlighting vi-mode)
+plugins=(colored-man-pages zsh-syntax-highlighting vi-mode)
 
 source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
