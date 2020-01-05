@@ -1,6 +1,8 @@
 # vim:syntax=sh
 # File: ~/.config/aliasrc
 
+# All XDG Environment variables are defined in ~/.profile
+
 # Application remapping
 alias	vim="nvim" vi="nvim" \
 		aftershot="AfterShot3X64" \
@@ -22,10 +24,10 @@ alias	n="vim ~/notes/index.md" \
 # Directories
 alias	b="cs ~/.local/bin" \
 		m="cs ~/.local/misc" \
-		cf="cs ~/.config" \
+		cf="cs $XDG_CONFIG_HOME" \
 		D="cs ~/Documents" \
 		d="cs ~/Downloads" \
-		h="cs ~" \
+		h="cs $HOME" \
 		l="cs ~/.local" \
 		cds="cs ~/Github/samerickson.me" \
 		g="cs ~/Github" \
@@ -36,12 +38,12 @@ alias	b="cs ~/.local/bin" \
 		i="cs ~/.local/share/icons/default" \
 
 # aliases for quickly editing frequently accessed configuration files
-alias	cfb="$EDITOR ~/.bashrc" \
-		cfp="$EDITOR ~/.profile" \
-		cfv="$EDITOR ~/.config/nvim/init.vim" \
-		cfs="$EDITOR ~/.config/sway/config" \
-		cfa="$EDITOR ~/.config/aliasrc" \
-		cfi="$EDITOR ~/.config/i3/config"
+alias	cfb="$EDITOR $HOME/.bashrc" \
+		cfp="$EDITOR $HOME/.profile" \
+		cfv="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim" \
+		cfs="$EDITOR $XDG_CONFIG_HOME/sway/config" \
+		cfa="$EDITOR $XDG_CONFIG_HOME/aliasrc" \
+		cfi="$EDITOR $XDG_CONFIG_HOME/i3/config"
 
 # Aliases for saving a few key presses off ls commands
 alias 	ls="ls --color=auto" \
@@ -51,15 +53,15 @@ alias 	ls="ls --color=auto" \
 		lah="ls -lah" \
 
 # Managing dotfiles / otherwise that is a lot of typting for routine file managment
-alias	dotf="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
-		dota="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add" \
-		dots="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno" \
-		dotc="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit" \
-		dotcm="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m" \
-		dotb="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch" \
-		dotch="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout" \
-		dotl="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline" \
-		dotd="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff"
+alias	dotf="git --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
+		dota="git --git-dir=$HOME/.dotfiles --work-tree=$HOME add" \
+		dots="git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno" \
+		dotc="git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit" \
+		dotcm="git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m" \
+		dotb="git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch" \
+		dotch="git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout" \
+		dotl="git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline" \
+		dotd="git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff"
 
 # Saving a few key presses off frequently uses git commands
 alias	gc="git commit -S -m" \
@@ -76,12 +78,8 @@ alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 
 # FUNCTIONS:
 # ==========
-
 # Delete nvim swapfiles
 function delswp() { rm ~/.local/share/nvim/swap/*; }
-
-# Add the GNUv3.0 License to the current directory
-license() { curl https://samerickson.me/files/LICENSE-GNU3 > LICENSE; }
 
 # Search bash history
 hist() { history | grep $@; }
@@ -92,18 +90,30 @@ cs() { cd $1 && echo "$1" && ls; }
 # Find and go to root directory of current git repository
 gcd() { cd "$(git rev-parse --show-toplevel)"; }
 
-# Display git commits in a pretty one line format
-commitlist() { git log --pretty=format: %h - %an, %ar : %s; }
+# Backup a file or directory the lazy way
+#	Useful for tinkering with config files, or temporarily changing code
+back() {
+	for var in "$@"; do
+		cp -r "$var" "$var.backup"
+		echo "Created backup of $var:	$var.backup"
+	done
+}
 
-# Print plain text in a nice looking way
-print() { 
-	if [ "$#" -eq 1 ]; then
-		lpr -o page-left=54 -o page-right=54 -p "$1"
-	elif [ "$#" -eq 2 ]; then
-		lpr -o page-left=54 -o page-right=54 -p "$1" -# "$2"
-	else
-		echo "Incorrect usage: print <file> [optional-num-copies]" 
-	fi
+# If a ".backup" file exists, swap it with the file of the same name,
+#	otherwise remove the .backup suffix
+uback() {
+	[ ! -f "$1.backup" ] && printf "File:\t$1.backup, not found.\n"
+	[ -f "$1.backup" ] && [ -f "$1" ] && mv "$1" "$1.tmp" && mv "$1.backup" "$1" && mv "$1.tmp" "$1.backup" && \
+		printf "Swapped $1.backup with $1"
+	[ -f "$1.backup" ] && [ ! -f "$1" ] && mv "$1.backup" "$1" && \
+		printf "Orriginal File not found restored from $1.backup"
+}
+
+# Moves all passed paramenters into the trash (located in ~/.Trash)
+trash() {
+    for var in "$@"; do
+        mv -nv "$var" "~/.trash"
+    done
 }
 
 
