@@ -22,20 +22,21 @@ alias	n="vim ~/notes/index.md" \
 		V="cs ~/notes/viu"
 
 # Directories
-alias	b="cs ~/.local/bin" \
-		m="cs ~/.local/misc" \
-		cf="cs $XDG_CONFIG_HOME" \
-		D="cs ~/Documents" \
-		d="cs ~/Downloads" \
-		h="cs $HOME" \
-		l="cs ~/.local" \
+alias	cdb="cs ~/.local/bin" \
+		cdm="cs ~/.local/misc" \
+		cdc="cs $XDG_CONFIG_HOME" \
+		cdd="cs ~/Downloads" \
+		cdh="cs $HOME" \
+		cdl="cs ~/.local" \
 		cds="cs ~/Github/samerickson.me" \
-		g="cs ~/Github" \
-		p="cs ~/.local/private" \
-		P="cs ~/Pictures" \
-		t="cs ~/Downloads/transmission" \
+		cdg="cs ~/Github" \
+		cdp="cs ~/.local/private" \
+		cdt="cs ~/Downloads/transmission" \
+		cdi="cs ~/.local/share/icons/default" \
+		H="cs $HOME" \
 		T="cs ~/.local/tap" \
-		i="cs ~/.local/share/icons/default" \
+		D="cs ~/Documents" \
+		P="cs ~/Pictures"
 
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR $HOME/.bashrc" \
@@ -53,36 +54,37 @@ alias 	ls="ls --color=auto" \
 		llh="ls -lh" \
 		lah="ls -lah"
 
+# FUNCTIONS:
+# ==========
+
 # Managing dotfiles / otherwise that is a lot of typting for routine file managment
-dotf() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@; }
-dota() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $@; }
-dots() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno $@ }
-dotc() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit $@ }
-dotcm() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m $@ }
+dotf() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@ }
+dota() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $@ }
+dots() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno }
+dotc() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit }
+dotcm() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m "$@" }
 dotb() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch $@ }
 dotch() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout $@ }
-dotl() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline $@ }
+dotl() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline }
 dotd() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff $@ }
 
 # Saving a few key presses off frequently uses git commands
-alias	gc="git commit -S -m" \
-		gs="git status" \
-		ga="git add" \
-		gd="git diff" \
-		gr="git remote" \
-		gl="git log --oneline" \
-		gp="git push"
+gc() { git commit -S -m "$@" }
+gs() { git status }
+ga() { git add  $@ }
+gd() { git diff $@ }
+gr() { git remote $@ }
+gl() { git log --oneline }
+gp() { git push $@ }
 
-# FUNCTIONS:
-# ==========
 # Delete nvim swapfiles
-delswp() { rm ~/.local/share/nvim/swap/*; }
+delswp() { rm ~/.local/share/nvim/swap/* }
 
 # Search bash history
-hist() { history | grep $@; }
+hist() { history | grep $@ }
 
 # Cd into a directory followed by ls
-cs() { cd $1 && echo "$1" && ls; }
+cs() { cd $1 && echo "$1" && ls }
 
 # Moves all passed paramenters into the trash (located in ~/.Trash)
 trash() {
