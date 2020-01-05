@@ -176,6 +176,8 @@ bar {
 
 # Input settings:
 # ===============
+#	See `man sway-inputs` for more information
+
 input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
 	repeat_delay 200
@@ -184,6 +186,10 @@ input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 input 1452:610:bcm5974 {
 	natural_scroll enabled
 	tap enabled
+	scroll_factor 1
+	accel_profile adaptive
+	dwt enabled # Disabled While Typeing
+	scroll_method two_finger
 }
 input 6940:6973:Corsair_Corsair_Gaming_K55_RGB_Keyboard {
 	xkb_options caps:escape
