@@ -61,6 +61,10 @@ call plug#end()
 	map <C-K> <C-W><C-K>
 	map <C-L> <C-W><C-L>
 	map <C-H> <C-W><C-H>
+
+	" Change movements will wrapped and long lines
+	map j gj
+	map k gk
 	
 	" Use ctrl+l to correct spelling on the fly
 	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
