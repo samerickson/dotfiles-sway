@@ -9,22 +9,27 @@ set $browser	env GDK_BACKEND=wayland firefox
 set $file		thunar
 set $menu		dmenu-wl_run
 set $sleep swayidle -w \
-    timeout 1 'swaymsg "output * dpms off"' \
-    timeout 2 'swaylock -f -c 3f6375' \
-    resume 'swaymsg "output * dpms on"; pkill -nx swayidle' \
-    before-sleep 'swaylock -f -c 3f6375'
+	timeout 1 'swaymsg "output * dpms off"' \
+	timeout 2 'swaylock -f -c 3f6375' \
+	resume 'swaymsg "output * dpms on"; pkill -nx swayidle' \
+	before-sleep 'swaylock -f -c 3f6375'
 
 # Startup Programs:
 # =================
 exec mako --max-visible 10 --width 350 --border-color=#00ff00 --background-color=#000000 --default-timeout 6000
 exec clipman -d
+exec libinput-gestures-setup start
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Shutdown displays when idle
 exec_always swayidle -w \
 	timeout 600 'swaymsg "output * dpms off"' \
-    timeout 630 'swaylock -f -c 3f6375' \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -c 3f6375'
+	timeout 630 'swaylock -f -c 3f6375' \
+	resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 3f6375'
+
+# Set screen to be less bright on startup to save battery life
+exec light -S 25
 
 # KEYBINDINGS
 # ===========
@@ -140,9 +145,9 @@ output HDMI-A-3 pos 0 0 res 1920x1080
 # Multi-media keys:
 # =================
 bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
-bindsym XF86AudioMute			exec  ~/.local/bin/audio.sh mute 
-bindsym XF86AudioRaiseVolume 	exec  ~/.local/bin/audio.sh add
-bindsym XF86AudioLowerVolume 	exec  ~/.local/bin/audio.sh sub
+bindsym XF86AudioMute			exec ~/.local/bin/audio.sh mute > $SWAYSOCK.wob
+bindsym XF86AudioRaiseVolume 	exec ~/.local/bin/audio.sh add > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume 	exec ~/.local/bin/audio.sh sub > $SWAYSOCK.wob
 #bindsym XF86PowerOff			exec 
 #bindsym XF86AudioNext			exec
 #bindsym XF86AudioPlay			exec
@@ -150,15 +155,11 @@ bindsym XF86AudioLowerVolume 	exec  ~/.local/bin/audio.sh sub
 #bindsym XF86AudioStop			exec
 #bindsym XF86AudioRewind		exec
 #bindsym XF86AudioForward		exec
-bindsym XF86MonBrightnessDown	exec lux -s 50
-bindsym XF86MonBrightnessUp		exec lux -a 50
+bindsym XF86MonBrightnessDown	exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym XF86MonBrightnessUp		exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym XF86PowerOff			exec zenity --question --text \
-                                    "Are you sure you wish to shut down now?" && \
-                                    shutdown now
-
-
-
-
+									"Are you sure you wish to shut down now?" && \
+									shutdown now
 # Status bar:
 # ===========
 bar {
@@ -166,8 +167,8 @@ bar {
 	status_command i3blocks
 	font CodeNewRoman Nerd Font Mono 12
 	colors {
-		statusline #ffffff
-		background #000000
+		statusline			#ffffff
+		background			#000000
 		focused_workspace	#000000 #000000 #00ff00
 		inactive_workspace	#000000 #000000 #ffff00
 		active_workspace	#000000 #000000 #ffff00
