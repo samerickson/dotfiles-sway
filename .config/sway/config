@@ -8,7 +8,7 @@ set $mod		Mod4
 set $term		termite
 set $browser	env GDK_BACKEND=wayland firefox
 set $bin		~/.local/bin
-set $file		thunar
+set $file		nautilus
 set $menu		dmenu-wl_run
 set $sleep swayidle -w \
 	timeout 1 'swaymsg "output * dpms off"' \
@@ -79,11 +79,12 @@ exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 	bindsym $mod+shift+z		exec $bin/screencast.sh stop
 	bindsym $mod+m				exec $bin/open-web-cam.sh
 	bindsym $mod+d				exec $menu
+	bindsym $mod+s				exec sgtk-menu -f -a
 	
 	# System managment:
 	# -----------------
 	bindsym $mod+Shift+c		reload
-	bindsym $mod+s				exec $sleep
+	bindsym $mod+Shift+x		exec $sleep
 	bindsym $mod+Shift+e		exec zenity --question --text "Are you sure you wish to exit sway?" && swaymsg exit
 
 # Window specific settings
