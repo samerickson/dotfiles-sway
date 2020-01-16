@@ -1,11 +1,13 @@
 # File: ~/.config/sway/config
 # Author: Sam Erickson | samerickson.ca
+# vim: nowrap
 
 # Variables
 # =========
 set $mod		Mod4
 set $term		termite
 set $browser	env GDK_BACKEND=wayland firefox
+set $bin		~/.local/bin
 set $file		thunar
 set $menu		dmenu-wl_run
 set $sleep swayidle -w \
@@ -16,10 +18,17 @@ set $sleep swayidle -w \
 
 # Startup Programs:
 # =================
+# Start notification daemon with specific styles
 exec mako --max-visible 10 --width 350 --border-color=#00ff00 --background-color=#000000 --default-timeout 6000
-exec clipman -d
-exec libinput-gestures-setup start
+
+# Restart libinput-gestures if running, or start
+exec libinput-gestures-setup restart
+
+# Add level indication bar for volume and screen brightness
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+
+# Start clipboard manager
+exec wl-paste -t text --watch clipman store 1>> ~/.local/log/clipman.log 2>&1 &
 
 # Shutdown displays when idle
 exec_always swayidle -w \
@@ -31,15 +40,19 @@ exec_always swayidle -w \
 # Set screen to be less bright on startup to save battery life
 exec light -S 25
 
+# gtk theme
+exec gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'  
+exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+
 # KEYBINDINGS
 # ===========
 
 	# Window management:
 	# ------------------
-	bindsym $mod+o				exec ~/.local/bin/swayresize.sh left
-	bindsym $mod+i				exec ~/.local/bin/swayresize.sh down
-	bindsym $mod+u				exec ~/.local/bin/swayresize.sh up
-	bindsym $mod+y				exec ~/.local/bin/swayresize.sh right
+	bindsym $mod+o				exec $bin/swayresize.sh left
+	bindsym $mod+i				exec $bin/swayresize.sh down
+	bindsym $mod+u				exec $bin/swayresize.sh up
+	bindsym $mod+y				exec $bin/swayresize.sh right
 	bindsym $mod+Shift+q		kill
 	bindsym $mod+Shift+s		layout stacking
 	bindsym $mod+Shift+t		layout tabbed
@@ -55,25 +68,23 @@ exec light -S 25
 	# Launching apllications:
 	# ----------------------
 	bindsym $mod+Return			exec $term
-	bindsym $mod+Shift+Return	exec ~/.local/bin/floating-term.sh
+	bindsym $mod+Shift+Return	exec $bin/floating-term.sh
 	bindsym $mod+a				exec galculator
 	bindsym $mod+w				exec $browser
-	bindsym $mod+Shift+w		exec ~/.local/bin/floating-term.sh nmtui
+	bindsym $mod+Shift+w		exec $bin/floating-term.sh nmtui
 	bindsym $mod+f				exec $file
-	bindsym $mod+p				exec ~/.local/bin/screenshot
-	bindsym $mod+c				exec clipman -s --selector="dmenu"
-	bindsym $mod+z				exec ~/.local/bin/screencast.sh start
-	bindsym $mod+shift+z		exec ~/.local/bin/screencast.sh stop
-	bindsym $mod+m				exec ~/.local/bin/open-web-cam.sh
+	bindsym $mod+p				exec $bin/screenshot
+	bindsym $mod+c				exec clipman pick
+	bindsym $mod+z				exec $bin/screencast.sh start
+	bindsym $mod+shift+z		exec $bin/screencast.sh stop
+	bindsym $mod+m				exec $bin/open-web-cam.sh
 	bindsym $mod+d				exec $menu
 	
 	# System managment:
 	# -----------------
 	bindsym $mod+Shift+c		reload
 	bindsym $mod+s				exec $sleep
-	bindsym $mod+Shift+e		exec zenity --question --text \
-									"Are you sure you wish to exit sway?" && \
-									swaymsg exit
+	bindsym $mod+Shift+e		exec zenity --question --text "Are you sure you wish to exit sway?" && swaymsg exit
 
 # Window specific settings
 client.focused								#00ff00 #000000 #ffffff #ff00ff #00ff00
@@ -91,30 +102,30 @@ output * bg ~/.config/wallpaper.* fill
 floating_modifier $mod normal
 
 # Set pixel density scaling
-output eDP-1 pos 1920 0 scale 2 res 2880x1800
-output HDMI-A-3 pos 0 0 res 1920x1080
+output eDP-1	pos 1920	0 scale	2	res 2880x1800
+output HDMI-A-3 pos 0		0 scale	1	res	1920x1080
 
 # Moving around:
 # ==============
 	# Move your focus around
-	bindsym $mod+h focus left
-	bindsym $mod+j focus down
-	bindsym $mod+k focus up
-	bindsym $mod+l focus right
-	bindsym $mod+Left focus left
-	bindsym $mod+Down focus down
-	bindsym $mod+Up focus up
-	bindsym $mod+Right focus right
+	bindsym $mod+h				focus left
+	bindsym $mod+j				focus down
+	bindsym $mod+k				focus up
+	bindsym $mod+l				focus right
+	bindsym $mod+Left			focus left
+	bindsym $mod+Down			focus down
+	bindsym $mod+Up				focus up
+	bindsym $mod+Right			focus right
 
 	# Move windows around
-	bindsym $mod+Shift+h move left
-	bindsym $mod+Shift+j move down
-	bindsym $mod+Shift+k move up
-	bindsym $mod+Shift+l move right
-	bindsym $mod+Shift+Left move left
-	bindsym $mod+Shift+Down move down
-	bindsym $mod+Shift+Up move up
-	bindsym $mod+Shift+Right move right
+	bindsym $mod+Shift+h		move left
+	bindsym $mod+Shift+j		move down
+	bindsym $mod+Shift+k		move up
+	bindsym $mod+Shift+l		move right
+	bindsym $mod+Shift+Left		move left
+	bindsym $mod+Shift+Down		move down
+	bindsym $mod+Shift+Up		move up
+	bindsym $mod+Shift+Right	move right
 
 # Workspaces:
 # ===========
@@ -144,10 +155,10 @@ output HDMI-A-3 pos 0 0 res 1920x1080
 
 # Multi-media keys:
 # =================
+bindsym XF86AudioMute			exec ~/.local/bin/audio.sh mute
+bindsym XF86AudioRaiseVolume 	exec $bin/audio.sh add && $bin/audio.sh get | $bin/wob.sh > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume 	exec $bin/audio.sh sub && $bin/audio.sh get | $bin/wob.sh > $SWAYSOCK.wob
 bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
-bindsym XF86AudioMute			exec ~/.local/bin/audio.sh mute > $SWAYSOCK.wob
-bindsym XF86AudioRaiseVolume 	exec ~/.local/bin/audio.sh add > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume 	exec ~/.local/bin/audio.sh sub > $SWAYSOCK.wob
 #bindsym XF86PowerOff			exec 
 #bindsym XF86AudioNext			exec
 #bindsym XF86AudioPlay			exec
@@ -157,9 +168,8 @@ bindsym XF86AudioLowerVolume 	exec ~/.local/bin/audio.sh sub > $SWAYSOCK.wob
 #bindsym XF86AudioForward		exec
 bindsym XF86MonBrightnessDown	exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym XF86MonBrightnessUp		exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-bindsym XF86PowerOff			exec zenity --question --text \
-									"Are you sure you wish to shut down now?" && \
-									shutdown now
+bindsym XF86PowerOff			exec zenity --question --text "Are you sure you wish to shut down now?" && shutdown now
+
 # Status bar:
 # ===========
 bar {
@@ -177,8 +187,6 @@ bar {
 
 # Input settings:
 # ===============
-#	See `man sway-inputs` for more information
-
 input 1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad {
 	xkb_options caps:escape
 	repeat_delay 200
