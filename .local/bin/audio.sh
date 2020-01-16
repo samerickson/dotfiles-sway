@@ -25,15 +25,12 @@ case "$1" in
 	sub)
 		pulsemixer --change-volume -5 ;;
 	get)
-		pulsemixer --get-volume | cut -c 1-2 ;;
+		pulsemixer --get-volume | awk '{print $1}' ;;
 	*)	
 		printf "Command %s not found" "$1"
 		usage
 		exit 1 ;;
 esac
-
-[ "$(pulsemixer --get-mute)" == 1 ] && printf "0\n" || \
-	printf "%s\n" "$(pulsemixer --get-volume | cut -c 1-2)"
 
 # Reload the status bar
 pkill -RTMIN+10 i3blocks
