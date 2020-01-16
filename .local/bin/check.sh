@@ -8,6 +8,7 @@
 # USAGE:
 #	check.sh <required-package> <pacman|yay> <Title> \
 #				<information> <cmd + parameters>
+
 title="$3"
 msg="$4. Please install '$5' via $2."
 
