@@ -1,22 +1,27 @@
-# ~/.zsh
+# ~/.zshrc
+# vim:nowrap
 
-# Default PATH
-export PATH="/bin:/sbin"
-export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin"
+autoload -U colors && colors
 
-# Personal scripts
-export PATH="$PATH:$HOME/.local/bin"
+# PROMPT
+# ======
+	# Show error code in prompt like so :127:
+	PROMPT="%{$fg[cyan]%}%B:%b%{$fg[yellow]%}%?%{$fg[cyan]%}%B:"
 
-# Intel access hardware-accelerated video decode.
-export PATH="$PATH:/opt/intel/mediasdk"
+	# Add dirrectory and $ at the end of prompt
+	PROMPT+="%{$fg[magenta]%}%~ %B%{$fg[green]%}$ %b"
 
-# OH-MY-ZSH
-export ZSH="/home/erickssb/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+# LOAD ALIASES AND FUNCTIONS
+# ==========================
+	source $XDG_CONFIG_HOME/aliasrc
 
-plugins=(colored-man-pages zsh-syntax-highlighting vi-mode)
+# What does this do?
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
 
-# Additional zsh shell related files
-source $HOME/.profile
-source $ZSH/oh-my-zsh.sh
-source $XDG_CONFIG_HOME/aliasrc
+# PLUGINS
+# =======
+	# Load zsh syntax highlighting
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
