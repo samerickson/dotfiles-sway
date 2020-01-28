@@ -16,14 +16,14 @@ rec-start() {
 	[ "$(pidof wf-recorder)" ] && \
 		notify-send "Error: screencast already running" && exit 1
 	
-	notify-send -i ~/.local/share/icons/default/32x32/devices/camera-video-white.png \
+	notify-send -i ~/.local/share/icons/default/devices/camera-video.png \
 		"Starting screencast on $DISPLAY"
 	wf-recorder -a -o "$DISPLAY" -f "$HOME/Videos/screencast-$(date +%Y-%m-%d_%h:%M).mp4"
 }
 
 rec-stop() {
 	[ ! "$(pidof wf-recorder)" ] && \
-		notify-send -i ~/.local/share/icons/default/32x32/status/computer-fail-white-png \
+		notify-send -i ~/.local/share/icons/default/status/computer-fail.png \
 		"Error: no active screencast to terminate" && exit 1
 	
 	kill -2 $(pidof wf-recorder)
