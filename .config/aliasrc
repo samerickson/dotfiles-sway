@@ -1,4 +1,4 @@
-# vim:syntax=sh
+# vim:syntax=zsh
 # File: ~/.config/aliasrc
 
 # All XDG Environment variables are defined in ~/.profile
@@ -8,13 +8,14 @@ alias	vim="nvim" vi="nvim" \
 		aftershot="AfterShot3X64" \
 		mpv="mpv --gpu-context=wayland" \
 		e="$EDITOR" \
-		trash="trash-put"
+		trash="trash-put" \
+		rename="perl-rename"
 
 # System commands
 alias	mx="chmod a+x"
 
 # Reload shell environment
-alias	src="source ~/.zshrc; echo 'reloaded .zshrc'"
+alias	src="source $ZDOTDIR/.zshrc && echo 'reloaded .zshrc' || echo $ZDOTDIR"
 
 # Open notes
 alias	n="vim ~/notes/index.md" \
@@ -46,7 +47,7 @@ alias	cfb="$EDITOR $HOME/.bashrc" \
 		cfs="$EDITOR $XDG_CONFIG_HOME/sway/config" \
 		cfa="$EDITOR $XDG_CONFIG_HOME/aliasrc" \
 		cfi="$EDITOR $XDG_CONFIG_HOME/i3/config" \
-		cfz="$EDITOR $HOME/.zshrc"
+		cfz="$EDITOR $ZDOTDIR/.zshrc"
 
 # Aliases for saving a few key presses off ls commands
 alias 	ls="ls --color=auto" \
@@ -60,14 +61,13 @@ alias 	ls="ls --color=auto" \
 
 # Managing dotfiles / otherwise that is a lot of typting for routine file managment
 dotf() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@ }
-dota() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $@ }
-dots() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME status -uno }
-dotc() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m $@}
-dotb() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME branch $@ }
-dotch() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout $@ }
-dotl() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME log --oneline }
-dotd() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff $@ }
-dotp() { git --git-dir=$HOME/.dotfiles --work-tree=$HOME push --set-upstream origin master }
+dota() { dotf add $@ }
+dots() { dotf status -uno }
+dotc() { dotf commit $@}
+dotb() { dotf  branch $@ }
+dotl() { dotf log --oneline }
+dotd() { dotf diff $@ }
+dotp() { dotf push --set-upstream origin master }
 
 # Saving a few key presses off frequently uses git commands
 gc() { git commit -m $@ }
