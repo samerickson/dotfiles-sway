@@ -176,7 +176,7 @@ bindsym XF86PowerOff			exec zenity --question --text "Are you sure you wish to s
 bar {
 	position bottom
 	status_command i3blocks
-	font CodeNewRoman Nerd Font Mono 1
+	font CodeNewRoman Nerd Font Mono 10
 	colors {
 		statusline			#ffffff
 		background			#000000
