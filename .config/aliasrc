@@ -43,6 +43,7 @@ alias	cdb="cs ~/.local/bin" \
 # aliases for quickly editing frequently accessed configuration files
 alias	cfb="$EDITOR $HOME/.bashrc" \
 		cfp="$EDITOR $HOME/.profile" \
+		cft="$EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml" \
 		cfv="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim" \
 		cfs="$EDITOR $XDG_CONFIG_HOME/sway/config" \
 		cfa="$EDITOR $XDG_CONFIG_HOME/aliasrc" \
