@@ -5,7 +5,7 @@
 # Variables
 # =========
 set $mod		Mod4
-set $term		termite
+set $term		alacritty
 set $browser	env GDK_BACKEND=wayland firefox
 set $bin		~/.local/bin
 set $file		nautilus
@@ -176,7 +176,7 @@ bindsym XF86PowerOff			exec zenity --question --text "Are you sure you wish to s
 bar {
 	position bottom
 	status_command i3blocks
-	font CodeNewRoman Nerd Font Mono 12
+	font CodeNewRoman Nerd Font Mono 1
 	colors {
 		statusline			#ffffff
 		background			#000000
