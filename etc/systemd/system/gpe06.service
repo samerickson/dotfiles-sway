@@ -1,8 +1,0 @@
-[Unit]
-Description=Disables GPE06 interrupt.
-
-[Service]
-ExecStart=/bin/bash -c 'echo "disable" > /sys/firmware/acpi/interrupts/gpe06'
-
-[Install]
-WantedBy=multi-user.target

@@ -1,8 +1,0 @@
-[Unit]
-Description=Disables GPE17 interrupt.
-
-[Service]
-ExecStart=/bin/bash -c 'echo "disable" > /sys/firmware/acpi/interrupts/gpe17'
-
-[Install]
-WantedBy=multi-user.target
