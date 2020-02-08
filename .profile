@@ -49,3 +49,5 @@
 	export CYAN="#00ffff"
 	export BLUE="#0000ff"
 	export MAGENTA="#ff00ff"
+
+	export LSCOLORS="EHfxcxdxBxegecabagacad"
