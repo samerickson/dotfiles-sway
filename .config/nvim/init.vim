@@ -23,7 +23,7 @@ call plug#end()
 	set nocompatible nohlsearch
 	filetype plugin on
 	syntax on
-	set listchars=tab:»·,extends:›,precedes:·,trail:·
+	set listchars=tab:»·,extends:›,precedes:·,space:·
 	set sw=4 sts=4 ts=4 noet
 	set splitbelow splitright
 	set history=1000 undolevels=1000
@@ -41,6 +41,10 @@ call plug#end()
 
 " Special markdown and wiki file settings
 	autocmd BufRead,BufNewFile *.md,*.wiki setlocal textwidth=79 spell
+
+" Special settings for yaml files
+	au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Personal shortcuts
 	" Shortcuts to frequently toggled settings
