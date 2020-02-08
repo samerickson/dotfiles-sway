@@ -11,6 +11,14 @@ command=~/.config/i3blocks/scripts/webcam.sh
 interval=10
 command=~/.config/i3blocks/scripts/recording.sh
 
+[home]
+interval=500
+command=~/.config/i3blocks/scripts/disk.sh /home
+
+[root]
+interval=500
+command=~/.config/i3blocks/scripts/disk.sh /
+
 [memory]
 interval=5
 command=~/.config/i3blocks/scripts/memory-usage.sh
@@ -18,14 +26,6 @@ command=~/.config/i3blocks/scripts/memory-usage.sh
 [temp]
 interval=30
 command=~/.config/i3blocks/scripts/temp.sh
-
-#[disk-usage-root]
-#interval=60
-#command=~/.config/i3blocks/scripts/disk.sh /
-
-#[disk-usage-home]
-#interval=60
-#command=~/.config/i3blocks/scripts/disk.sh /home
 
 [volume]
 interval=once
