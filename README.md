@@ -1,8 +1,8 @@
 DOTFILES [SWAYWM]
 ================= 
 Very much a work in progress...
-![Clean image of my desktop](images/clean.png)
-![Busy image of my desktop](images/busy.png)
+![Clean image of my desktop](.local/misc/images/clean.png)
+![Busy image of my desktop](.local/misc/images/busy.png)
 
 Features
 --------
@@ -15,7 +15,7 @@ everyday tasks.
 Information about system functions will be presented in the form of
 notifications. Most, if not all key-bindings will notify you of any background
 processes, or if anything has gone wrong.
-![Image of notifications](images/notification.png)
+![Image of notifications](.local/misc/images/notification.png)
 
 Install
 -------
