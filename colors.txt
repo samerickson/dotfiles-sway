@@ -1,0 +1,10 @@
+Color       dark        bright
+-------     -------     -------
+black       #333333     #666666
+red         #cf6a4c     #f14c4c
+green       #7ead6a     #23d18b
+yellow      #d8as4c     #f5f543
+blue        #597bc5     #3b8eea
+magenta     #a037b0     #d670d6
+cyan        #71b9f8     #29b8db
+white       #adadad     #e5e5e5
