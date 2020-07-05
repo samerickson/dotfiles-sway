@@ -1,6 +1,9 @@
 DOTFILES [SWAYWM]
 ================= 
-Very much a work in progress...
+
+***Currently not maintained.***
+---------------------------
+
 ![Clean image of my desktop](.local/misc/images/clean_desktop.png)
 ![Busy image of my desktop](.local/misc/images/busy_desktop.png)
 
